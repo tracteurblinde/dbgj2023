@@ -9,15 +9,15 @@ clone:
     settings:
       path: ${CI_WORKSPACE}/code
       lfs: false
-    commands:
-      - env
   clone-website:
     image: woodpeckerci/plugin-git
     when: *no_web
-    settings:
-      path: ${CI_WORKSPACE}/website
-      lfs: false
-      branch: website
+    # settings:
+    #   path: ${CI_WORKSPACE}/website
+    #   lfs: false
+    #   branch: website
+    commands:
+      - env
 
 steps:
   build:
