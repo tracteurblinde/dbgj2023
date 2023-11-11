@@ -9,6 +9,8 @@ clone:
     settings:
       path: ${CI_WORKSPACE}/code
       lfs: false
+    commands:
+      - env
   clone-website:
     image: woodpeckerci/plugin-git
     when: *no_web
