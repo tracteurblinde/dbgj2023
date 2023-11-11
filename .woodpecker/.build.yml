@@ -34,10 +34,14 @@ steps:
       - cd code/project
       - godot -v --headless --export-release "Web" ../../website/index.html
       - ls -lta ../../website
-  deploy:
-    image: appleboy/drone-git-push
-    when: *no_web
-    settings:
-      branch: website
-      local_ref: website
-      path: website
+      - cd ../../website
+      - git add .
+      - git commit -m "Update website $${CI_COMMIT_SHA}"
+      - git push origin website
+  # deploy:
+  #   image: appleboy/drone-git-push
+  #   when: *no_web
+  #   settings:
+  #     branch: website
+  #     local_ref: website
+  #     path: website
