@@ -32,7 +32,7 @@ steps:
       - cd code/project
       - godot -v --headless --export-release "Web" ../../website/index.html
       - ls -lta ../../website
-  deploy:
+  publish:
     image: woodpeckerci/plugin-git
     when: *no_web
     secrets: [ cbtoken ]
@@ -43,9 +43,9 @@ steps:
       - git add .
       - git config user.name "${CI_COMMIT_AUTHOR}"
       - git config user.email "${CI_COMMIT_AUTHOR_EMAIL}"
-      - CI_REPO_REMOTE_PROTOCOL=$(echo $CI_REPO_REMOTE | cut -d/ -f1)
-      - CI_REPO_REMOTE_REST=$(echo $CI_REPO_REMOTE | cut -d/ -f3-)
-      - CI_REPO_REMOTE_AUTH="$CI_REPO_REMOTE_PROTOCOL//${CBTOKEN}@${CI_REPO_REMOTE_REST}"
+      - CI_REPO_REMOTE_PROTOCOL=$$(echo ${CI_REPO_REMOTE} | cut -d/ -f1)
+      - CI_REPO_REMOTE_REST=$$(echo ${CI_REPO_REMOTE} | cut -d/ -f3-)
+      - CI_REPO_REMOTE_AUTH="$${CI_REPO_REMOTE_PROTOCOL}//${CBTOKEN}@$${CI_REPO_REMOTE_REST}"
       - git remote set-url origin "$CI_REPO_REMOTE_AUTH"
-      - git commit -m "Deploying build for ${CI_COMMIT_SHA}"
+      - git commit -m "Published build for ${CI_COMMIT_SHA}"
       - git push origin HEAD:website
