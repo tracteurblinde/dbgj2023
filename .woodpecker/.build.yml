@@ -22,6 +22,8 @@ steps:
     image: barichello/godot-ci:4.1.3
     when: *no_web
     commands:
+      - env
+      - pwd
       - ls -la /root/.local/share/godot/templates
       - ls -la .
       - ls -la ./code
