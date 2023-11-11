@@ -46,6 +46,7 @@ steps:
       - CI_REPO_REMOTE_PROTOCOL=$$(echo ${CI_REPO_REMOTE} | cut -d/ -f1)
       - CI_REPO_REMOTE_REST=$$(echo ${CI_REPO_REMOTE} | cut -d/ -f3-)
       - CI_REPO_REMOTE_AUTH="$${CI_REPO_REMOTE_PROTOCOL}//${CBTOKEN}@$${CI_REPO_REMOTE_REST}"
+      - echo "CI_REPO_REMOTE_AUTH=$${CI_REPO_REMOTE_AUTH}"
       - git remote set-url origin "$${CI_REPO_REMOTE_AUTH}"
       - git commit -m "Published build for ${CI_COMMIT_SHA}"
       - git push origin HEAD:website
