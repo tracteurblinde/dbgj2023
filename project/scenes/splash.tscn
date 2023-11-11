@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3lm3fblj80uj"]
+[gd_scene load_steps=8 format=3 uid="uid://b5kakp0a17qny"]
 
 [ext_resource type="Script" path="res://scenes/splash.gd" id="1_dj6kr"]
 [ext_resource type="Texture2D" uid="uid://bplbai3j2ehrf" path="res://3pp/dbgj/Icon dbgj 03.png" id="1_hu43p"]
 [ext_resource type="Texture2D" uid="uid://bc0jjxwdtui05" path="res://3pp/godot/logo_vertical_color_dark.png" id="2_8m73p"]
-[ext_resource type="Texture2D" uid="uid://bx8tpn6fpcnna" path="res://assets/logo/TracteurBot.png" id="3_e000u"]
+[ext_resource type="Texture2D" uid="uid://bx8tpn6fpcnna" path="res://3pp/tracteurbot/TracteurBot.png" id="3_0682g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyidv"]
 font_size = 48
@@ -161,7 +161,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-texture = ExtResource("3_e000u")
+texture = ExtResource("3_0682g")
 expand_mode = 2
 stretch_mode = 4
 
