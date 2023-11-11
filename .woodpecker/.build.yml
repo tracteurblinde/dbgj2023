@@ -35,6 +35,7 @@ steps:
   deploy:
     image: woodpeckerci/plugin-git
     when: *no_web
+    secrets: [ cbtoken ]
     commands:
       - cd website
       - git status
@@ -42,12 +43,9 @@ steps:
       - git add .
       - git config user.name "${CI_COMMIT_AUTHOR}"
       - git config user.email "${CI_COMMIT_AUTHOR_EMAIL}"
+      - CI_REPO_REMOTE_PROTOCOL=$(echo $CI_REPO_REMOTE | cut -d/ -f1)
+      - CI_REPO_REMOTE_REST=$(echo $CI_REPO_REMOTE | cut -d/ -f3-)
+      - CI_REPO_REMOTE_AUTH="$CI_REPO_REMOTE_PROTOCOL//${CBTOKEN}@${CI_REPO_REMOTE_REST}"
+      - git remote set-url origin "$CI_REPO_REMOTE_AUTH"
       - git commit -m "Deploying build for ${CI_COMMIT_SHA}"
       - git push origin HEAD:website
-  # deploy:
-  #   image: appleboy/drone-git-push
-  #   when: *no_web
-  #   settings:
-  #     branch: website
-  #     local_ref: website
-  #     path: website
