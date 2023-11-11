@@ -1,0 +1,8 @@
+steps:
+  build:
+    when:
+      - branch:
+          exclude: website
+    image: barichello/godot-ci:4.1.3
+    commands:
+      ls -la /root/.local/share/godot/templates
