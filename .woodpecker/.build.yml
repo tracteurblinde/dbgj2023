@@ -16,6 +16,8 @@ clone:
       path: website
       lfs: false
       branch: website
+      sha: ''
+      ref: refs/heads/website
 
 steps:
   build:
