@@ -4,15 +4,19 @@ variables:
        exclude: website
 
 steps:
-  clone:
+  clone-code:
     image: plugins/git
     when: *no_web
-    path: ${CI_WORKSPACE}/code
+    settings:
+      path: ${CI_WORKSPACE}/code
+      lfs: false
   clone-website:
     image: plugins/git
     when: *no_web
-    path: ${CI_WORKSPACE}/website
-    branch: website
+    settings:
+      path: ${CI_WORKSPACE}/website
+      lfs: false
+      branch: website
   build:
     image: barichello/godot-ci:4.1.3
     when: *no_web
