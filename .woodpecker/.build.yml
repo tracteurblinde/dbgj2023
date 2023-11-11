@@ -7,13 +7,13 @@ clone:
   clone-code:
     image: woodpeckerci/plugin-git
     settings:
-      path: $CI_WORKSPACE/code
+      path: code
       lfs: false
   clone-website:
     image: woodpeckerci/plugin-git
     when: *no_web
     settings:
-      path: $CI_WORKSPACE/website
+      path: website
       lfs: false
       branch: website
 
