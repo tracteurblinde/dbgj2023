@@ -4,13 +4,13 @@ variables:
        exclude: website
 
 steps:
-  clone-code:
+  clone:
     image: plugins/git
     when: *no_web
     settings:
       path: ${CI_WORKSPACE}/code
       lfs: false
-  clone-website:
+  clone:
     image: plugins/git
     when: *no_web
     settings:
