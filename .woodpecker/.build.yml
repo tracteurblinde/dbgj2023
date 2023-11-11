@@ -24,8 +24,6 @@ steps:
     image: barichello/godot-ci:4.1.3
     when: *no_web
     commands:
-      - env
-      - pwd
       - ls -la /root/.local/share/godot/templates
       - ls -la .
       - ls -la ./code
@@ -34,12 +32,18 @@ steps:
       - cd code/project
       - godot -v --headless --export-release "Web" ../../website/index.html
       - ls -lta ../../website
-      - cd ../../website
+  deploy:
+    image: woodpeckerci/plugin-git
+    when: *no_web
+    commands:
+      - cd website
+      - git status
+      - git branch -vv
       - git add .
       - git config user.name "${CI_COMMIT_AUTHOR}"
       - git config user.email "${CI_COMMIT_AUTHOR_EMAIL}"
       - git commit -m "Update website ${CI_COMMIT_SHA}"
-      - git push origin website
+      - git push
   # deploy:
   #   image: appleboy/drone-git-push
   #   when: *no_web
