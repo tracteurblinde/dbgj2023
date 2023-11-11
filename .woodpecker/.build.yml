@@ -36,7 +36,9 @@ steps:
       - ls -lta ../../website
       - cd ../../website
       - git add .
-      - git commit -m "Update website $${CI_COMMIT_SHA}"
+      - git config user.name "${CI_COMMIT_AUTHOR}"
+      - git config user.email "${CI_COMMIT_AUTHOR_EMAIL}"
+      - git commit -m "Update website ${CI_COMMIT_SHA}"
       - git push origin website
   # deploy:
   #   image: appleboy/drone-git-push
