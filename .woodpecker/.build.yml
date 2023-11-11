@@ -5,14 +5,14 @@ variables:
 
 clone:
   git:
-    image: plugins/git
+    image: woodpeckerci/plugin-git
     settings:
       path: ${CI_WORKSPACE}/code
       lfs: false
 
 steps:
   clone-website:
-    image: plugins/git
+    image: woodpeckerci/plugin-git
     when: *no_web
     settings:
       path: ${CI_WORKSPACE}/website
