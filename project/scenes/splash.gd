@@ -1,6 +1,6 @@
 extends Control
 
-@export var MENU_SCENE: String = "res://scenes/menu.tscn"
+@export_file var MENU_SCENE: String = "res://scenes/main.tscn"
 
 func _ready():
 	$AnimationPlayer.play("fade_godot")
