@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chobd6rt2rcjt"
-path.s3tc="res://.godot/imported/CupOfCoffeeTexture.png-54ea39f355498da1eb99ac0de908b634.s3tc.ctex"
+path.s3tc="res://.godot/imported/CupOfCoffeeTexture.png-170a6560d2e94837747fa7f27e1e2841.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3pp/quaterius/CupOfCoffeeTexture.png"
-dest_files=["res://.godot/imported/CupOfCoffeeTexture.png-54ea39f355498da1eb99ac0de908b634.s3tc.ctex"]
+source_file="res://3pp/quaterius/Food Pack Vol.1 - May 2016/CupOfCoffeeTexture.png"
+dest_files=["res://.godot/imported/CupOfCoffeeTexture.png-170a6560d2e94837747fa7f27e1e2841.s3tc.ctex"]
 
 [params]
 

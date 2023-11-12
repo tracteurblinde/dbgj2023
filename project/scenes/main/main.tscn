@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
-[ext_resource type="ArrayMesh" uid="uid://clrcaxrxkeadl" path="res://3pp/quaterius/CupOfCoffee.obj" id="2_otx0d"]
-[ext_resource type="Texture2D" uid="uid://chobd6rt2rcjt" path="res://3pp/quaterius/CupOfCoffeeTexture.png" id="3_7i6cn"]
+[ext_resource type="ArrayMesh" uid="uid://clrcaxrxkeadl" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/CupOfCoffee.obj" id="2_otx0d"]
+[ext_resource type="Texture2D" uid="uid://chobd6rt2rcjt" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/CupOfCoffeeTexture.png" id="3_7i6cn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ibw1"]
 font_size = 70
