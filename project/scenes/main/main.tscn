@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=17 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
+[ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
 [ext_resource type="Texture2D" uid="uid://c7lexj02x507s" path="res://3pp/polyhaven/playground_sand/playground_sand_diff_1k.png" id="2_ae4o7"]
+[ext_resource type="Environment" uid="uid://2c1osq2fdumx" path="res://scenes/main/environment.tres" id="2_jehhd"]
 [ext_resource type="PackedScene" uid="uid://ctug0fufv3kcu" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/cup_of_coffee.tscn" id="2_ocyxa"]
 [ext_resource type="Texture2D" uid="uid://uniy7qkmhkvk" path="res://3pp/polyhaven/playground_sand/playground_sand_arm_1k.png" id="3_5qy4g"]
 [ext_resource type="Texture2D" uid="uid://bps1ql4pdp1cx" path="res://3pp/polyhaven/playground_sand/playground_sand_disp_1k.png" id="3_q7wxw"]
 [ext_resource type="Texture2D" uid="uid://doabfwa2x78ac" path="res://3pp/polyhaven/playground_sand/playground_sand_nor_gl_1k.png" id="5_ie7om"]
+[ext_resource type="PackedScene" uid="uid://crcr08x7jkpfu" path="res://3pp/quaterius/Ultimate Modular Women - April 2022/Medieval.gltf" id="9_oqg8s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ibw1"]
 font_size = 70
@@ -63,6 +66,29 @@ uv1_scale = Vector3(3.7, 3.7, 3.7)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_c6hd4"]
 
+[sub_resource type="Animation" id="Animation_3wv71"]
+resource_name = "camera_intro"
+length = 4.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 6.82948, 10.1091, 1, 1, 0, 1.8122, 20.1166, 2, 1, -0.471815, 12.3804, 20.5425, 3, 1, -0.471815, 12.3804, 0.238289, 4, 1, -0.471815, 82.6821, 0.238289)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.275184, 0, 0, 0.961391, 1, 1, 0.0400706, 0, 0, 0.999197, 2, 1, -0.259198, 0, 0, 0.965824, 3, 1, -0.707107, 0, 0, 0.707107, 4, 1, -0.707107, 0, 0, 0.707107)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljcyj"]
+_data = {
+"camera_intro": SubResource("Animation_3wv71")
+}
+
 [node name="Main" type="Node3D"]
 
 [node name="UI" type="Control" parent="."]
@@ -106,9 +132,11 @@ libraries = {
 }
 
 [node name="Game" type="Node3D" parent="."]
+script = ExtResource("2_2x67g")
 
 [node name="Camera3D" type="Camera3D" parent="Game"]
 transform = Transform3D(1, 0, 0, 0, 0.848547, 0.52912, 0, -0.52912, 0.848547, 0, 6.82948, 10.1091)
+environment = ExtResource("2_jehhd")
 fov = 37.8493
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Game"]
@@ -119,7 +147,7 @@ spot_range = 7.11108
 spot_angle = 26.6014
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Game"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_k7ff3")
 mesh = SubResource("PlaneMesh_c6hd4")
 
@@ -131,9 +159,71 @@ spot_angle = 13.5999
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Game"]
 
 [node name="CupOfCoffee" parent="Game" instance=ExtResource("2_ocyxa")]
+transform = Transform3D(0.126, 0, 0, 0, 0.1, 0, 0, 0, 0.126, 0.139988, 0.944961, 0.446563)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game"]
 transform = Transform3D(-0.0141407, -0.869695, 0.493387, 0.44686, 0.435922, 0.781209, -0.894492, 0.231521, 0.382468, 20.0568, 17.3337, 10.6281)
 shadow_enabled = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game"]
+libraries = {
+"": SubResource("AnimationLibrary_ljcyj")
+}
+
+[node name="Medieval" parent="." instance=ExtResource("9_oqg8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65286, 0, -0.646064)
+
+[node name="Skeleton3D" parent="Medieval/CharacterArmature" index="0"]
+bones/3/rotation = Quaternion(-0.0193345, -7.45197e-09, -1.86299e-09, 0.999813)
+bones/4/rotation = Quaternion(0.153868, -0.237706, -0.00529317, 0.959058)
+bones/6/rotation = Quaternion(-0.00947105, 1.6243e-10, -1.89102e-10, 0.999955)
+bones/7/rotation = Quaternion(-0.0245108, -2.58033e-10, 0.000127055, 0.9997)
+bones/8/rotation = Quaternion(-0.269814, -0.417607, -0.40977, 0.764783)
+bones/9/rotation = Quaternion(-0.741918, -0.0413935, -0.176409, 0.645542)
+bones/10/rotation = Quaternion(-0.11985, -0.0209594, -0.19429, 0.973369)
+bones/11/rotation = Quaternion(0.00930064, 0.00630404, 0.0231915, 0.999668)
+bones/13/rotation = Quaternion(-0.0044012, 0.145898, 0.0930834, 0.984901)
+bones/14/rotation = Quaternion(-0.0822602, -0.00279773, 0.0209049, 0.996388)
+bones/15/rotation = Quaternion(-0.0302401, 0.0127248, 0.00602093, 0.999444)
+bones/17/rotation = Quaternion(-0.0556499, 0.0566408, 0.0460721, 0.995777)
+bones/18/rotation = Quaternion(-0.120008, -0.00437156, -0.0210206, 0.992541)
+bones/19/rotation = Quaternion(-0.0190482, 0.0352492, -0.00743691, 0.999169)
+bones/21/rotation = Quaternion(-0.0439309, 0.106429, -0.0408442, 0.992509)
+bones/22/rotation = Quaternion(-0.119294, 0.0572576, -0.0398883, 0.990404)
+bones/23/rotation = Quaternion(-0.0748089, 0.0279542, -0.00762858, 0.996777)
+bones/25/rotation = Quaternion(-0.0912982, 0.0340919, -0.0866569, 0.99146)
+bones/28/rotation = Quaternion(-0.317099, -0.317893, -0.180712, 0.875063)
+bones/29/rotation = Quaternion(0.131836, 0.274653, -0.0108175, 0.952401)
+bones/31/rotation = Quaternion(-0.269814, 0.417607, 0.40977, 0.764783)
+bones/32/rotation = Quaternion(-0.741143, 0.171119, 0.108826, 0.639987)
+bones/33/rotation = Quaternion(-0.203003, -0.203246, 0.331849, 0.898531)
+bones/34/rotation = Quaternion(0.00822544, -0.00981952, -0.0520068, 0.998565)
+bones/36/rotation = Quaternion(-0.0162477, -0.144091, -0.0946519, 0.984893)
+bones/37/rotation = Quaternion(-0.0919627, 0.00305185, -0.0204528, 0.995548)
+bones/38/rotation = Quaternion(-0.0302401, -0.0127248, -0.00602094, 0.999444)
+bones/39/rotation = Quaternion(-0.0116159, 0.0117943, -0.0165027, 0.999727)
+bones/40/rotation = Quaternion(-0.0645982, -0.0551519, -0.0280933, 0.99599)
+bones/42/rotation = Quaternion(-0.0190482, -0.0352493, 0.00743692, 0.999169)
+bones/44/rotation = Quaternion(-0.030456, 0.0289634, -0.128329, 0.990841)
+bones/45/rotation = Quaternion(-0.0439309, -0.106429, 0.0408442, 0.992509)
+bones/46/rotation = Quaternion(-0.119294, -0.0572576, 0.0398883, 0.990404)
+bones/47/rotation = Quaternion(-0.0748089, -0.0279542, 0.0076286, 0.996777)
+bones/48/rotation = Quaternion(-0.0310906, 0.0273529, -0.227078, 0.972996)
+bones/49/rotation = Quaternion(-0.0766031, -0.0608134, 0.182085, 0.978406)
+bones/51/rotation = Quaternion(-0.116958, 0.00965457, 0.00323036, 0.993085)
+bones/52/rotation = Quaternion(-0.254289, 0.351549, 0.248254, 0.866095)
+bones/53/rotation = Quaternion(0.131836, -0.274653, 0.0108175, 0.952401)
+bones/54/rotation = Quaternion(-0.0596973, -0.0318687, -0.117547, 0.990759)
+bones/55/rotation = Quaternion(0.96787, 0.0771803, -0.222048, 0.0892494)
+bones/56/rotation = Quaternion(0.247458, -1.09572e-08, 4.93741e-10, 0.968899)
+bones/57/rotation = Quaternion(0.965092, -0.0183966, 0.171005, 0.197524)
+bones/58/rotation = Quaternion(0.222987, 9.39729e-09, 6.72372e-09, 0.974821)
+bones/61/rotation = Quaternion(0.704032, 0.0409887, -0.0407701, 0.707811)
+
+[node name="Sword" parent="Medieval/CharacterArmature/Skeleton3D" index="0"]
+transform = Transform3D(-0.000451657, -0.949667, 0.313261, 0.965665, 0.0809678, 0.246849, -0.259788, 0.302617, 0.917024, -0.18831, 0.883246, 0.162276)
+
+[connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
+
+[editable path="Medieval"]
