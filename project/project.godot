@@ -41,11 +41,21 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={}
 layout/styles={
+"Coffee Canyon": {
+"export_overrides": {
+"bold_font": "\"res://3pp/IBMPlex/IBMPlexSans-Bold.ttf\"",
+"bold_italic_font": "\"res://3pp/IBMPlex/IBMPlexSans-BoldItalic.ttf\"",
+"italic_font": "\"res://3pp/IBMPlex/IBMPlexSans-Italic.ttf\"",
+"normal_font": "\"res://3pp/IBMPlex/IBMPlexSans-Regular.ttf\""
+},
+"inherits": "Default"
+},
 "Default": {
+"export_overrides": {},
 "inherits": ""
 }
 }
-layout/default_style="Default"
+layout/default_style="Coffee Canyon"
 glossary/default_case_sensitive=true
 
 [display]

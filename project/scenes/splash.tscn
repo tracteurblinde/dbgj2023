@@ -1,11 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5kakp0a17qny"]
+[gd_scene load_steps=11 format=3 uid="uid://b5kakp0a17qny"]
 
 [ext_resource type="Script" path="res://scenes/splash.gd" id="1_dj6kr"]
 [ext_resource type="Texture2D" uid="uid://bplbai3j2ehrf" path="res://3pp/dbgj/Icon dbgj 03.png" id="1_hu43p"]
 [ext_resource type="Texture2D" uid="uid://bc0jjxwdtui05" path="res://3pp/godot/logo_vertical_color_dark.png" id="2_8m73p"]
 [ext_resource type="Texture2D" uid="uid://bx8tpn6fpcnna" path="res://3pp/tracteurbot/TracteurBot.png" id="3_0682g"]
+[ext_resource type="FontFile" uid="uid://1l0hibsit5ic" path="res://3pp/monaspace/MonaspaceArgon-Regular.woff" id="4_0wru3"]
+[ext_resource type="FontFile" uid="uid://bdwltr2ls8mlq" path="res://3pp/IBMPlex/IBMPlexSans-Regular.ttf" id="6_jl622"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_yyidv"]
+[sub_resource type="LabelSettings" id="LabelSettings_m0e23"]
+font = ExtResource("4_0wru3")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkmsl"]
+font = ExtResource("6_jl622")
 font_size = 48
 
 [sub_resource type="Animation" id="Animation_im7bp"]
@@ -146,15 +153,12 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="tracteur_dev"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -297.0
-offset_top = -235.5
-offset_right = 297.0
-offset_bottom = 235.5
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_right = 209.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -170,7 +174,7 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="tracteur_dev/VBoxContainer"]
 layout_mode = 2
 text = "tracteur.dev"
-label_settings = SubResource("LabelSettings_yyidv")
+label_settings = SubResource("LabelSettings_m0e23")
 horizontal_alignment = 1
 
 [node name="dbgj" type="Control" parent="."]
@@ -185,15 +189,12 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="dbgj"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -297.0
-offset_top = -235.5
-offset_right = 297.0
-offset_bottom = 235.5
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_right = 221.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -208,9 +209,9 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="dbgj/VBoxContainer"]
 layout_mode = 2
-text = "Desert Bus For Hope 2023
- Game Jam"
-label_settings = SubResource("LabelSettings_yyidv")
+text = "Desert Bus For Hope
+2023 Game Jam"
+label_settings = SubResource("LabelSettings_nkmsl")
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

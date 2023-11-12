@@ -1,2 +1,3 @@
 join narrator 1
 narrator: Hello, World
+[signal arg="intro_complete"]
