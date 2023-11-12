@@ -125,7 +125,7 @@ spot_angle = 13.5999
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Game"]
 
 [node name="CupOfCoffee" type="MeshInstance3D" parent="Game"]
-transform = Transform3D(0.188, 0, 0, 0, 0.15, 0, 0, 0, 0.188, -0.0632523, 0.151186, 0.446563)
+transform = Transform3D(0.188, 0, 0, 0, 0.15, 0, 0, 0, 0.188, 0.00270671, 0.151186, 0.446563)
 mesh = ExtResource("2_otx0d")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ppgik")
