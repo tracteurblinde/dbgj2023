@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=8 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
-[ext_resource type="ArrayMesh" uid="uid://clrcaxrxkeadl" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/CupOfCoffee.obj" id="2_otx0d"]
-[ext_resource type="Texture2D" uid="uid://chobd6rt2rcjt" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/CupOfCoffeeTexture.png" id="3_7i6cn"]
+[ext_resource type="PackedScene" uid="uid://ctug0fufv3kcu" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/cup_of_coffee.tscn" id="2_ocyxa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ibw1"]
 font_size = 70
@@ -48,9 +47,6 @@ albedo_color = Color(0, 0.34902, 0.784314, 1)
 ao_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_c6hd4"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppgik"]
-albedo_texture = ExtResource("3_7i6cn")
 
 [node name="Main" type="Node3D"]
 
@@ -119,11 +115,7 @@ spot_angle = 13.5999
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Game"]
 
-[node name="CupOfCoffee" type="MeshInstance3D" parent="Game"]
-transform = Transform3D(1.254, 0, 0, 0, 1, 0, 0, 0, 1.254, 0.00270671, 0.997848, 0.446563)
-mesh = ExtResource("2_otx0d")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ppgik")
+[node name="CupOfCoffee" parent="Game" instance=ExtResource("2_ocyxa")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game"]
 transform = Transform3D(-0.0141407, -0.869695, 0.493387, 0.44686, 0.435922, 0.781209, -0.894492, 0.231521, 0.382468, 20.0568, 17.3337, 10.6281)
