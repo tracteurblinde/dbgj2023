@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clrcaxrxkeadl"
+path="res://.godot/imported/CupOfCoffee.obj-07975bed36542206615b0f78264d51bc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CupOfCoffee.obj-07975bed36542206615b0f78264d51bc.mesh"]
+
+source_file="res://3pp/quaterius/CupOfCoffee.obj"
+dest_files=["res://.godot/imported/CupOfCoffee.obj-07975bed36542206615b0f78264d51bc.mesh", "res://.godot/imported/CupOfCoffee.obj-07975bed36542206615b0f78264d51bc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

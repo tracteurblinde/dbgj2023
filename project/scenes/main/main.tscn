@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=3 uid="uid://bh5tolofd0bng"]
+
+[ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
+[ext_resource type="ArrayMesh" uid="uid://clrcaxrxkeadl" path="res://3pp/quaterius/CupOfCoffee.obj" id="2_otx0d"]
+[ext_resource type="Texture2D" uid="uid://chobd6rt2rcjt" path="res://3pp/quaterius/CupOfCoffeeTexture.png" id="3_7i6cn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ibw1"]
+font_size = 70
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_p0yqv"]
+resource_name = "intro"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Blackout:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1.1),
+"transitions": PackedFloat32Array(2, 2, 2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 1), Vector2(0.5, 1), Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(373.5, 700), Vector2(373.5, 310.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yibl1"]
+_data = {
+"intro": SubResource("Animation_p0yqv")
+}
+
+[sub_resource type="Environment" id="Environment_q6iui"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_eqkwp"]
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7ff3"]
+albedo_color = Color(0, 0.34902, 0.784314, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c6hd4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppgik"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_7i6cn")
+
+[node name="Main" type="Node3D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txuwy")
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = 340.0
+offset_right = 266.5
+offset_bottom = 439.001
+grow_horizontal = 2
+grow_vertical = 2
+text = "Desert Bus Cafe"
+label_settings = SubResource("LabelSettings_7ibw1")
+
+[node name="Blackout" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_yibl1")
+}
+
+[node name="Game" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Game"]
+transform = Transform3D(1, 0, 0, 0, 0.848547, 0.52912, 0, -0.52912, 0.848547, 0, 0.845434, 1.52106)
+environment = SubResource("Environment_q6iui")
+attributes = SubResource("CameraAttributesPractical_eqkwp")
+fov = 37.8493
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Game"]
+transform = Transform3D(0.399201, -0.279762, 0.873139, 0.116326, 0.960069, 0.254431, -0.909454, 8.19237e-09, 0.415805, 2.90964, 0.820059, 1.316)
+shadow_enabled = true
+spot_angle = 13.5999
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Game"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_k7ff3")
+mesh = SubResource("PlaneMesh_c6hd4")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Game"]
+transform = Transform3D(0.68402, 0.37436, -0.626075, -0.0732741, 0.88919, 0.451633, 0.725773, -0.263051, 0.635655, -2.13098, 1.30353, 2.04085)
+visible = false
+spot_angle = 13.5999
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Game"]
+
+[node name="CupOfCoffee" type="MeshInstance3D" parent="Game"]
+transform = Transform3D(0.188, 0, 0, 0, 0.15, 0, 0, 0, 0.188, -0.0632523, 0.151186, 0.446563)
+mesh = ExtResource("2_otx0d")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppgik")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14123, 2.71629, 0.99796)
+shadow_enabled = true
+
+[connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
