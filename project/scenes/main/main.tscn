@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=12 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
+[ext_resource type="Texture2D" uid="uid://c7lexj02x507s" path="res://3pp/polyhaven/playground_sand/playground_sand_diff_1k.png" id="2_ae4o7"]
 [ext_resource type="PackedScene" uid="uid://ctug0fufv3kcu" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/cup_of_coffee.tscn" id="2_ocyxa"]
+[ext_resource type="Texture2D" uid="uid://uniy7qkmhkvk" path="res://3pp/polyhaven/playground_sand/playground_sand_arm_1k.png" id="3_5qy4g"]
+[ext_resource type="Texture2D" uid="uid://bps1ql4pdp1cx" path="res://3pp/polyhaven/playground_sand/playground_sand_disp_1k.png" id="3_q7wxw"]
+[ext_resource type="Texture2D" uid="uid://doabfwa2x78ac" path="res://3pp/polyhaven/playground_sand/playground_sand_nor_gl_1k.png" id="5_ie7om"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ibw1"]
 font_size = 70
@@ -43,8 +47,19 @@ _data = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7ff3"]
 diffuse_mode = 3
-albedo_color = Color(0, 0.34902, 0.784314, 1)
+albedo_texture = ExtResource("2_ae4o7")
+metallic = 1.0
+metallic_texture = ExtResource("3_5qy4g")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_5qy4g")
+roughness_texture_channel = 2
+normal_enabled = true
+normal_texture = ExtResource("5_ie7om")
 ao_enabled = true
+ao_texture = ExtResource("3_5qy4g")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_q7wxw")
+uv1_scale = Vector3(3.7, 3.7, 3.7)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_c6hd4"]
 
