@@ -17,6 +17,8 @@ Skybox and sand texture - [Polyhaven](https://polyhaven.com/)
 
 Models - [Quaternius](https://quaternius.com/)
 
+The dialogue system is [Dialogic](https://github.com/coppolaemilio/dialogic)
+
 This project uses the [Godot Engine](https://godotengine.org/).
 
 ## License

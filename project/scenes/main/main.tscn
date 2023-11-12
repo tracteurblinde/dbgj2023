@@ -221,7 +221,7 @@ bones/58/rotation = Quaternion(0.222987, 9.39729e-09, 6.72372e-09, 0.974821)
 bones/61/rotation = Quaternion(0.704032, 0.0409887, -0.0407701, 0.707811)
 
 [node name="Sword" parent="Medieval/CharacterArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.000451657, -0.949667, 0.313261, 0.965665, 0.0809678, 0.246849, -0.259788, 0.302617, 0.917024, -0.18831, 0.883246, 0.162276)
+transform = Transform3D(-0.000451617, -0.949667, 0.313262, 0.965665, 0.0809682, 0.246849, -0.259788, 0.302618, 0.917024, -0.18831, 0.883246, 0.162276)
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
