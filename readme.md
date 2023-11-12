@@ -4,7 +4,7 @@ Latest version is hosted at https://demo.tracteur.dev/dbgj2023/
 
 This is the repository an entry in the [Desert Bus For Hope 2023 Game Jam](https://itch.io/jam/2023).
 
-**Theme:** TBA
+**Theme:** Coffee Quest
 
 ## Credits
 Concept, design and code - Tracteur Blindé
