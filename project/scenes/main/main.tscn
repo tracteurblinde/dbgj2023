@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=10 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="ArrayMesh" uid="uid://clrcaxrxkeadl" path="res://3pp/quaterius/CupOfCoffee.obj" id="2_otx0d"]
@@ -42,19 +42,14 @@ _data = {
 "intro": SubResource("Animation_p0yqv")
 }
 
-[sub_resource type="Environment" id="Environment_q6iui"]
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_eqkwp"]
-dof_blur_far_enabled = true
-dof_blur_near_enabled = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7ff3"]
+diffuse_mode = 3
 albedo_color = Color(0, 0.34902, 0.784314, 1)
+ao_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_c6hd4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppgik"]
-vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("3_7i6cn")
 
 [node name="Main" type="Node3D"]
@@ -102,18 +97,18 @@ libraries = {
 [node name="Game" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Game"]
-transform = Transform3D(1, 0, 0, 0, 0.848547, 0.52912, 0, -0.52912, 0.848547, 0, 0.845434, 1.52106)
-environment = SubResource("Environment_q6iui")
-attributes = SubResource("CameraAttributesPractical_eqkwp")
+transform = Transform3D(1, 0, 0, 0, 0.848547, 0.52912, 0, -0.52912, 0.848547, 0, 6.82948, 10.1091)
 fov = 37.8493
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Game"]
-transform = Transform3D(0.399201, -0.279762, 0.873139, 0.116326, 0.960069, 0.254431, -0.909454, 8.19237e-09, 0.415805, 2.90964, 0.820059, 1.316)
+transform = Transform3D(0.616494, -0.270643, 0.739383, 0.116326, 0.960069, 0.254431, -0.778719, -0.0708456, 0.62336, 2.90964, 3.87046, 3.43288)
+visible = false
 shadow_enabled = true
-spot_angle = 13.5999
+spot_range = 7.11108
+spot_angle = 26.6014
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Game"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_k7ff3")
 mesh = SubResource("PlaneMesh_c6hd4")
 
@@ -125,13 +120,13 @@ spot_angle = 13.5999
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Game"]
 
 [node name="CupOfCoffee" type="MeshInstance3D" parent="Game"]
-transform = Transform3D(0.188, 0, 0, 0, 0.15, 0, 0, 0, 0.188, 0.00270671, 0.151186, 0.446563)
+transform = Transform3D(1.254, 0, 0, 0, 1, 0, 0, 0, 1.254, 0.00270671, 0.997848, 0.446563)
 mesh = ExtResource("2_otx0d")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ppgik")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Game"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14123, 2.71629, 0.99796)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game"]
+transform = Transform3D(-0.0141407, -0.869695, 0.493387, 0.44686, 0.435922, 0.781209, -0.894492, 0.231521, 0.382468, 20.0568, 17.3337, 10.6281)
 shadow_enabled = true
 
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]

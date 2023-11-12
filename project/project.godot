@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Desert Bus Game Jam 2023"
 run/main_scene="res://scenes/splash.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://3pp/godot/logo_vertical_color_dark.png"
 config/icon="res://icon.svg"
@@ -26,4 +26,6 @@ window/size/viewport_height=720
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=1
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=1
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
