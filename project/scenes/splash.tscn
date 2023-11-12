@@ -10,7 +10,7 @@ font_size = 48
 
 [sub_resource type="Animation" id="Animation_im7bp"]
 resource_name = "fade_godot"
-length = 6.0
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -108,6 +108,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="godot_logo" type="Control" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
