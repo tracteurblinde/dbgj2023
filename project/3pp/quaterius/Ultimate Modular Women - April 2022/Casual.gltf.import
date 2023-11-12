@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://crcr08x7jkpfu"
-path="res://.godot/imported/Medieval.gltf-8564181963aa24ab45581a821d6e737f.scn"
+uid="uid://ci4pemfsmqfb0"
+path="res://.godot/imported/Casual.gltf-f1c26064b1bcb4f1fb2bfaa64e2c0cc2.scn"
 
 [deps]
 
-source_file="res://3pp/quaterius/Ultimate Modular Women - April 2022/Medieval.gltf"
-dest_files=["res://.godot/imported/Medieval.gltf-8564181963aa24ab45581a821d6e737f.scn"]
+source_file="res://3pp/quaterius/Ultimate Modular Women - April 2022/Casual.gltf"
+dest_files=["res://.godot/imported/Casual.gltf-f1c26064b1bcb4f1fb2bfaa64e2c0cc2.scn"]
 
 [params]
 
