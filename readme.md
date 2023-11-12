@@ -13,6 +13,10 @@ Desert Bus Gamejam Logo - Featherweight
 
 tracteurbot - Lance Ferrantino
 
+Skybox and sand texture - [Polyhaven](https://polyhaven.com/)
+
+Models - [Quaternius](https://quaternius.com/)
+
 This project uses the [Godot Engine](https://godotengine.org/).
 
 ## License
