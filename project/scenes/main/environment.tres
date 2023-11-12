@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://2c1osq2fdumx"]
+
+[ext_resource type="Texture2D" uid="uid://yt5mcbocabad" path="res://3pp/polyhaven/quarry_04_puresky_1k.hdr" id="1_d6u37"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y3q8a"]
+panorama = ExtResource("1_d6u37")
+
+[sub_resource type="Sky" id="Sky_qhqld"]
+sky_material = SubResource("PanoramaSkyMaterial_y3q8a")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_qhqld")
+ambient_light_source = 3
+reflected_light_source = 2
