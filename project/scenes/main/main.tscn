@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=19 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -9,9 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://uniy7qkmhkvk" path="res://3pp/polyhaven/playground_sand/playground_sand_arm_1k.png" id="3_5qy4g"]
 [ext_resource type="Texture2D" uid="uid://bps1ql4pdp1cx" path="res://3pp/polyhaven/playground_sand/playground_sand_disp_1k.png" id="3_q7wxw"]
 [ext_resource type="Texture2D" uid="uid://doabfwa2x78ac" path="res://3pp/polyhaven/playground_sand/playground_sand_nor_gl_1k.png" id="5_ie7om"]
-[ext_resource type="PackedScene" uid="uid://ci4pemfsmqfb0" path="res://3pp/quaterius/Ultimate Modular Women - April 2022/Casual.gltf" id="9_ykfk7"]
-[ext_resource type="AnimationLibrary" uid="uid://b2qpi2a680phl" path="res://3pp/quaterius/Ultimate Modular Women - April 2022/casual_animations.res" id="10_eyxat"]
-[ext_resource type="PackedScene" uid="uid://wmf2eu0uuhrg" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn" id="12_26ril"]
+[ext_resource type="PackedScene" uid="uid://cmovmeg7hc85a" path="res://scenes/Player/player.tscn" id="10_mrrum"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2aurj"]
 font = ExtResource("2_jhd37")
@@ -52,8 +50,12 @@ _data = {
 "intro": SubResource("Animation_p0yqv")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_py6xi"]
+size = Vector3(2, 0.02, 2)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7ff3"]
 diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("2_ae4o7")
 metallic = 1.0
 metallic_texture = ExtResource("3_5qy4g")
@@ -150,8 +152,13 @@ shadow_enabled = true
 spot_range = 7.11108
 spot_angle = 26.6014
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Game"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Game"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Game/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+shape = SubResource("BoxShape3D_py6xi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Game/StaticBody3D"]
 material_override = SubResource("StandardMaterial3D_k7ff3")
 mesh = SubResource("PlaneMesh_c6hd4")
 
@@ -174,104 +181,9 @@ libraries = {
 "": SubResource("AnimationLibrary_ljcyj")
 }
 
-[node name="Player" parent="Game" instance=ExtResource("9_ykfk7")]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 6.3548, 0, 0.0131655)
-
-[node name="Skeleton3D" parent="Game/Player/CharacterArmature" index="0"]
-bones/4/rotation = Quaternion(0.153868, -0.237706, -0.00529317, 0.959058)
-bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.000206973, 1.23439e-10, 1.1865e-10, 1)
-bones/6/rotation = Quaternion(-0.00947105, 1.6243e-10, -1.89102e-10, 0.999955)
-bones/7/rotation = Quaternion(-0.0245108, -2.58109e-10, 0.000127055, 0.9997)
-bones/7/scale = Vector3(1, 1, 1)
-bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(-0.741918, -0.0413935, -0.176409, 0.645542)
-bones/9/scale = Vector3(1, 1, 1)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(-0.0536506, -0.0583229, -0.0907802, 0.992713)
-bones/13/rotation = Quaternion(-0.00440122, 0.145898, 0.0930834, 0.984901)
-bones/14/rotation = Quaternion(-0.0822602, -0.00279773, 0.0209049, 0.996388)
-bones/15/scale = Vector3(1, 1, 1)
-bones/16/rotation = Quaternion(-0.0116159, -0.0117943, 0.0165027, 0.999727)
-bones/16/scale = Vector3(1, 1, 1)
-bones/17/rotation = Quaternion(-0.0535813, 0.0588508, -0.000211708, 0.996828)
-bones/17/scale = Vector3(1, 1, 1)
-bones/18/rotation = Quaternion(-0.120008, -0.00437156, -0.0210206, 0.992541)
-bones/19/scale = Vector3(1, 1, 1)
-bones/20/rotation = Quaternion(-0.030456, -0.0289634, 0.128329, 0.990841)
-bones/21/rotation = Quaternion(-0.0439309, 0.106429, -0.0408442, 0.992509)
-bones/21/scale = Vector3(1, 1, 1)
-bones/22/rotation = Quaternion(-0.119294, 0.0572575, -0.0398883, 0.990404)
-bones/23/rotation = Quaternion(-0.0748089, 0.0279542, -0.00762858, 0.996777)
-bones/23/scale = Vector3(1, 1, 1)
-bones/24/rotation = Quaternion(-0.0310906, -0.0273529, 0.227078, 0.972996)
-bones/24/scale = Vector3(1, 1, 1)
-bones/25/rotation = Quaternion(-0.0766031, 0.0608134, -0.182085, 0.978406)
-bones/26/scale = Vector3(1, 1, 1)
-bones/27/scale = Vector3(1, 1, 1)
-bones/28/rotation = Quaternion(-0.317099, -0.317893, -0.180712, 0.875063)
-bones/29/rotation = Quaternion(0.131836, 0.274653, -0.0108175, 0.952401)
-bones/29/scale = Vector3(1, 1, 1)
-bones/30/rotation = Quaternion(-0.0596973, 0.0318687, 0.117547, 0.990759)
-bones/30/scale = Vector3(1, 1, 1)
-bones/31/scale = Vector3(1, 1, 1)
-bones/32/rotation = Quaternion(-0.741143, 0.171119, 0.108826, 0.639987)
-bones/32/scale = Vector3(1, 1, 1)
-bones/33/rotation = Quaternion(-0.203003, -0.203246, 0.331849, 0.898531)
-bones/33/scale = Vector3(1, 1, 1)
-bones/34/scale = Vector3(1, 1, 1)
-bones/35/rotation = Quaternion(-0.0536506, 0.0583229, 0.0907802, 0.992713)
-bones/38/scale = Vector3(1, 1, 1)
-bones/39/scale = Vector3(1, 1, 1)
-bones/40/rotation = Quaternion(-0.0656035, -0.0574026, -0.0753899, 0.993337)
-bones/42/scale = Vector3(1, 1, 1)
-bones/44/scale = Vector3(1, 1, 1)
-bones/45/rotation = Quaternion(-0.119294, -0.0572576, 0.0398883, 0.990404)
-bones/47/rotation = Quaternion(-0.0310906, 0.0273529, -0.227078, 0.972996)
-bones/47/scale = Vector3(1, 1, 1)
-bones/50/scale = Vector3(1, 1, 1)
-bones/51/rotation = Quaternion(-0.254289, 0.351549, 0.248254, 0.866095)
-bones/51/scale = Vector3(1, 1, 1)
-bones/52/rotation = Quaternion(0.131836, -0.274653, 0.0108175, 0.952401)
-bones/52/scale = Vector3(1, 1, 1)
-bones/53/rotation = Quaternion(-0.0596973, -0.0318687, -0.117547, 0.990759)
-bones/54/rotation = Quaternion(0.96787, 0.0771803, -0.222048, 0.0892494)
-bones/54/scale = Vector3(1, 1, 1.00001)
-bones/55/rotation = Quaternion(0.247458, -1.07379e-08, -2.62593e-09, 0.968899)
-bones/56/rotation = Quaternion(0.965092, -0.0183965, 0.171005, 0.197524)
-bones/57/rotation = Quaternion(0.222987, 8.68261e-09, 4.36873e-09, 0.974821)
-bones/57/scale = Vector3(1, 0.999999, 0.999999)
-bones/60/rotation = Quaternion(0.704032, 0.0409887, -0.0407701, 0.707811)
-bones/60/scale = Vector3(1, 1, 1)
-
-[node name="AnimationPlayer" parent="Game/Player" index="1"]
-libraries = {
-"": ExtResource("10_eyxat")
-}
-
-[node name="ThirdPersonCamera" parent="Game/Player" instance=ExtResource("12_26ril")]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 0, 0)
-visible = false
-distance_from_pivot = 5.0
-
-[node name="RotationPivot" parent="Game/Player/ThirdPersonCamera" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 6.3548, 0, 0.0131655)
-
-[node name="OffsetPivot" parent="Game/Player/ThirdPersonCamera/RotationPivot" index="0"]
-transform = Transform3D(1, -3.9187e-07, 6.47546e-10, 3.94476e-07, 1, 5.65946e-05, -2.27374e-11, -5.65946e-05, 1, 0, 0, 0)
-
-[node name="CameraSpringArm" parent="Game/Player/ThirdPersonCamera/RotationPivot/OffsetPivot" index="0"]
-spring_length = 5.0
-
-[node name="CameraMarker" parent="Game/Player/ThirdPersonCamera/RotationPivot/OffsetPivot/CameraSpringArm" index="0"]
-transform = Transform3D(1, 7.93399e-08, 3.5101e-07, 1.48521e-08, 1, -7.89762e-06, 2.08538e-07, 1.2219e-06, 1, 0, -0.000282924, 5)
-
-[node name="Camera" parent="Game/Player/ThirdPersonCamera" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 6.3548, 1.7101, 4.71163)
+[node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.96139, 0)
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Game/AnimationPlayer" to="Game" method="_on_animation_player_animation_finished"]
-
-[editable path="Game/Player"]
-[editable path="Game/Player/ThirdPersonCamera"]

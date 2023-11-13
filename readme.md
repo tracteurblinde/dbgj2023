@@ -21,7 +21,6 @@ Models:
 
 This project uses the [Godot Engine](https://godotengine.org/) and the following Godot Plugins:
 - [Dialogic](https://github.com/coppolaemilio/dialogic)
-- [Godot Third Person Camera](https://github.com/JeanKouss/godot-third-person-camera)
 
 ## License
 
