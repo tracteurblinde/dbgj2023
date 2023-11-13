@@ -19,8 +19,9 @@ Textures:
 Models:
  - [Quaternius](https://quaternius.com/)
 
-This project uses the [Godot Engine](https://godotengine.org/) and the following Godot Plugins:
+This project uses the [Godot Engine](https://godotengine.org/) and the following Godot Plugins and Assets:
 - [Dialogic](https://github.com/coppolaemilio/dialogic)
+- [Godot-4.1-Third-Person-Controller](https://github.com/WaffleAWT/Godot-4.1-Third-Person-Controller)
 
 ## License
 
