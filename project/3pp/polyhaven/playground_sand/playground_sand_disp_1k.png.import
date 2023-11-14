@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bps1ql4pdp1cx"
 path.s3tc="res://.godot/imported/playground_sand_disp_1k.png-5e85427de4b90274608e968ea1fd9f22.s3tc.ctex"
+path.etc2="res://.godot/imported/playground_sand_disp_1k.png-5e85427de4b90274608e968ea1fd9f22.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://3pp/polyhaven/playground_sand/playground_sand_disp_1k.png"
-dest_files=["res://.godot/imported/playground_sand_disp_1k.png-5e85427de4b90274608e968ea1fd9f22.s3tc.ctex"]
+dest_files=["res://.godot/imported/playground_sand_disp_1k.png-5e85427de4b90274608e968ea1fd9f22.s3tc.ctex", "res://.godot/imported/playground_sand_disp_1k.png-5e85427de4b90274608e968ea1fd9f22.etc2.ctex"]
 
 [params]
 

@@ -3,23 +3,22 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yt5mcbocabad"
-path.bptc="res://.godot/imported/quarry_04_puresky_1k.hdr-2bd71535e0285052f2fbf6d5d995cef2.bptc.ctex"
+path="res://.godot/imported/quarry_04_puresky_1k.hdr-2bd71535e0285052f2fbf6d5d995cef2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://3pp/polyhaven/quarry_04_puresky_1k.hdr"
-dest_files=["res://.godot/imported/quarry_04_puresky_1k.hdr-2bd71535e0285052f2fbf6d5d995cef2.bptc.ctex"]
+dest_files=["res://.godot/imported/quarry_04_puresky_1k.hdr-2bd71535e0285052f2fbf6d5d995cef2.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
-compress/hdr_compression=1
+compress/hdr_compression=2
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
