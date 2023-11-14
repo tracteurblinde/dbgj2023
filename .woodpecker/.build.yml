@@ -21,7 +21,7 @@ clone:
 
 steps:
   build:
-    image: ghcr.io/tracteurblinde/godot-ci:4.2.beta5
+    image: ghcr.io/tracteurblinde/godot-ci:4.2.beta6
     when: *no_web
     commands:
       - ls -la /root/.local/share/godot/templates
@@ -30,7 +30,7 @@ steps:
       - ls -la ./website
       - rm -r ./website/* || true
       - cd code/project
-      - godot -v --headless --export-release "Web" ../../website/dbgj2023.html
+      - godot -v --headless --export-release "Web" ../../website/index.html
       - ls -lta ../../website
   publish:
     image: woodpeckerci/plugin-git
