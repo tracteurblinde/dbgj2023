@@ -1,5 +1,4 @@
-variables:
-- &no_web:
+when:
   # Only run on the ci_test branch
   - branch: [ ci_test/* ]
   #  - branch:     
@@ -13,7 +12,6 @@ clone:
       lfs: false
   clone-website:
     image: woodpeckerci/plugin-git
-    when: *no_web
     settings:
       path: website
       lfs: false
@@ -24,7 +22,6 @@ clone:
 steps:
   build:
     image: ghcr.io/tracteurblinde/godot-ci:4.2.beta6
-    when: *no_web
     commands:
       - ls -la /root/.local/share/godot/templates
       - ls -la .
@@ -36,7 +33,6 @@ steps:
       - ls -lta ../../website
   publish:
     image: woodpeckerci/plugin-git
-    when: *no_web
     secrets: [ cbtoken ]
     commands:
       - cd website
