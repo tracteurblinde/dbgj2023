@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=26 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -6,16 +6,28 @@
 [ext_resource type="Environment" uid="uid://2c1osq2fdumx" path="res://scenes/main/environment.tres" id="2_jehhd"]
 [ext_resource type="FontFile" uid="uid://bdwltr2ls8mlq" path="res://3pp/IBMPlex/IBMPlexSans-Regular.ttf" id="2_jhd37"]
 [ext_resource type="PackedScene" uid="uid://ctug0fufv3kcu" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/cup_of_coffee.tscn" id="2_ocyxa"]
+[ext_resource type="FontFile" uid="uid://dt03v05jm70v0" path="res://3pp/IBMPlex/IBMPlexSans-Bold.ttf" id="3_3k0j6"]
 [ext_resource type="Texture2D" uid="uid://uniy7qkmhkvk" path="res://3pp/polyhaven/playground_sand/playground_sand_arm_1k.png" id="3_5qy4g"]
 [ext_resource type="Texture2D" uid="uid://bps1ql4pdp1cx" path="res://3pp/polyhaven/playground_sand/playground_sand_disp_1k.png" id="3_q7wxw"]
+[ext_resource type="FontFile" uid="uid://b5bfhdfq7k3nn" path="res://3pp/IBMPlex/IBMPlexSans-Italic.ttf" id="3_yig4o"]
 [ext_resource type="Texture2D" uid="uid://doabfwa2x78ac" path="res://3pp/polyhaven/playground_sand/playground_sand_nor_gl_1k.png" id="5_ie7om"]
 [ext_resource type="PackedScene" uid="uid://cmovmeg7hc85a" path="res://scenes/Player/player.tscn" id="10_mrrum"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_2aurj"]
+[sub_resource type="LabelSettings" id="LabelSettings_r76lp"]
 font = ExtResource("2_jhd37")
+font_size = 48
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2aurj"]
+font = ExtResource("3_3k0j6")
 font_size = 70
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xgl41"]
+font = ExtResource("3_yig4o")
+font_size = 32
 
 [sub_resource type="Animation" id="Animation_04wrb"]
 resource_name = "door_close"
@@ -67,20 +79,169 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UI/Title:position")
+tracks/1/path = NodePath("UI/PressAnyKey:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/PressAnyKey:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/SuperTitle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UI/SuperTitle:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UI/Title:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UI/Title:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UI/Title:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
-"values": [Vector2(373.5, 700), Vector2(373.5, 310.5)]
+"values": [Vector2(389, 720), Vector2(389, 314)]
+}
+
+[sub_resource type="Animation" id="Animation_pdw1p"]
+resource_name = "fade_intro"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SuperTitle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/PressAnyKey:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/Title:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/SuperTitle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UI/PressAnyKey:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UI/Title:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yibl1"]
 _data = {
 "door_close": SubResource("Animation_04wrb"),
 "door_open": SubResource("Animation_t1e85"),
+"fade_intro": SubResource("Animation_pdw1p"),
 "intro": SubResource("Animation_p0yqv")
 }
 
@@ -141,23 +302,54 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_txuwy")
 
-[node name="Title" type="Label" parent="UI"]
+[node name="SuperTitle" type="Label" parent="UI"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -266.5
-offset_top = -49.5
-offset_right = 266.5
-offset_bottom = 49.5009
+offset_left = -235.5
+offset_top = -86.0
+offset_right = 239.5
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Desert Bus Cafe"
+text = "Desert Bus:"
+label_settings = SubResource("LabelSettings_r76lp")
+
+[node name="Title" type="Label" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.0
+offset_top = -46.0
+offset_right = 251.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Coffee Canyon"
 label_settings = SubResource("LabelSettings_2aurj")
+horizontal_alignment = 1
+
+[node name="PressAnyKey" type="Label" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 389.0
+offset_top = 395.0
+offset_right = 891.0
+offset_bottom = 437.0
+text = "Press Any Key"
+label_settings = SubResource("LabelSettings_xgl41")
+horizontal_alignment = 1
 
 [node name="Blackout" type="ColorRect" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
