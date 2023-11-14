@@ -1,7 +1,9 @@
 variables:
 - &no_web:
    - branch:
-       exclude: website
+       # Only run on the ci_test branch
+       #exclude: website
+       include: [ ci_test/* ]
 
 clone:
   clone-code:
