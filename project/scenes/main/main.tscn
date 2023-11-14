@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=21 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -16,6 +16,38 @@ font = ExtResource("2_jhd37")
 font_size = 70
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_04wrb"]
+resource_name = "door_close"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Blackout:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1.1),
+"transitions": PackedFloat32Array(2, 2, 2, 2),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0.5, 1), Vector2(0.5, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t1e85"]
+resource_name = "door_open"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Blackout:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1.1),
+"transitions": PackedFloat32Array(2, 2, 2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 1), Vector2(0.5, 1), Vector2(0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_p0yqv"]
 resource_name = "intro"
@@ -47,7 +79,32 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yibl1"]
 _data = {
+"door_close": SubResource("Animation_04wrb"),
+"door_open": SubResource("Animation_t1e85"),
 "intro": SubResource("Animation_p0yqv")
+}
+
+[sub_resource type="Animation" id="Animation_3wv71"]
+resource_name = "camera_intro"
+length = 4.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level/Camera3D")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 6.82948, 10.1091, 1, 1, 0, 1.8122, 20.1166, 2, 1, -0.471815, 12.3804, 20.5425, 3, 1, -0.471815, 12.3804, 0.238289)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Level/Camera3D")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.275184, 0, 0, 0.961391, 1, 1, 0.0400706, 0, 0, 0.999197, 2, 1, -0.259198, 0, 0, 0.965824, 3, 1, -0.707107, 0, 0, 0.707107)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljcyj"]
+_data = {
+"camera_intro": SubResource("Animation_3wv71")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7ff3"]
@@ -72,29 +129,6 @@ uv1_scale = Vector3(3.7, 3.7, 3.7)
 [sub_resource type="BoxShape3D" id="BoxShape3D_py6xi"]
 size = Vector3(20, 0.02, 20)
 
-[sub_resource type="Animation" id="Animation_3wv71"]
-resource_name = "camera_intro"
-length = 4.0
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 6.82948, 10.1091, 1, 1, 0, 1.8122, 20.1166, 2, 1, -0.471815, 12.3804, 20.5425, 3, 1, -0.471815, 12.3804, 0.238289)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.275184, 0, 0, 0.961391, 1, 1, 0.0400706, 0, 0, 0.999197, 2, 1, -0.259198, 0, 0, 0.965824, 3, 1, -0.707107, 0, 0, 0.707107)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljcyj"]
-_data = {
-"camera_intro": SubResource("Animation_3wv71")
-}
-
 [node name="Main" type="Node3D"]
 
 [node name="UI" type="Control" parent="."]
@@ -117,7 +151,7 @@ anchor_bottom = 0.5
 offset_left = -266.5
 offset_top = -49.5
 offset_right = 266.5
-offset_bottom = 49.501
+offset_bottom = 49.5009
 grow_horizontal = 2
 grow_vertical = 2
 text = "Desert Bus Cafe"
@@ -142,51 +176,54 @@ libraries = {
 [node name="Game" type="Node3D" parent="."]
 script = ExtResource("2_2x67g")
 
-[node name="Camera3D" type="Camera3D" parent="Game"]
-transform = Transform3D(1, 0, 0, 0, 0.848547, 0.529119, 0, -0.529119, 0.848547, 0, 6.82948, 10.1091)
-environment = ExtResource("2_jehhd")
+[node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.96139, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Game"]
+[node name="Level" type="Node3D" parent="Game"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game/Level"]
+process_mode = 3
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ljcyj")
+}
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game/Level"]
+transform = Transform3D(-0.0141407, -0.869695, 0.493386, 0.44686, 0.435922, 0.781209, -0.894492, 0.231522, 0.382468, 20.0568, 17.3337, 10.6281)
+shadow_enabled = true
+
+[node name="CupOfCoffee" parent="Game/Level" instance=ExtResource("2_ocyxa")]
+transform = Transform3D(0.126, 0, 0, 0, 0.1, 0, 0, 0, 0.126, 0.139988, 0.944961, 0.446563)
+skeleton = NodePath("../../..")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Game/Level"]
+transform = Transform3D(0.68402, 0.37436, -0.626076, -0.0732741, 0.88919, 0.451633, 0.725773, -0.263051, 0.635655, -2.13098, 1.30353, 2.04085)
+visible = false
+spot_angle = 13.5999
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Game/Level"]
 transform = Transform3D(0.616494, -0.270643, 0.739383, 0.116326, 0.960069, 0.254431, -0.778719, -0.0708456, 0.62336, 2.90964, 3.87046, 3.43288)
 visible = false
 shadow_enabled = true
 spot_range = 7.11108
 spot_angle = 26.6014
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Game"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Game/Level"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Game/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Game/Level/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_k7ff3")
 mesh = SubResource("PlaneMesh_c6hd4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Game/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Game/Level/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
 shape = SubResource("BoxShape3D_py6xi")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Game"]
-transform = Transform3D(0.68402, 0.37436, -0.626075, -0.0732741, 0.88919, 0.451633, 0.725773, -0.263051, 0.635655, -2.13098, 1.30353, 2.04085)
-visible = false
-spot_angle = 13.5999
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Game"]
-
-[node name="CupOfCoffee" parent="Game" instance=ExtResource("2_ocyxa")]
-transform = Transform3D(0.126, 0, 0, 0, 0.1, 0, 0, 0, 0.126, 0.139988, 0.944961, 0.446563)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game"]
-transform = Transform3D(-0.0141407, -0.869695, 0.493387, 0.44686, 0.435922, 0.781209, -0.894492, 0.231521, 0.382468, 20.0568, 17.3337, 10.6281)
-shadow_enabled = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Game"]
-process_mode = 3
-libraries = {
-"": SubResource("AnimationLibrary_ljcyj")
-}
-
-[node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.96139, 0)
+[node name="Camera3D" type="Camera3D" parent="Game/Level"]
+transform = Transform3D(1, 0, 0, 0, 0.848547, 0.529119, 0, -0.529119, 0.848547, 0, 6.82948, 10.1091)
+environment = ExtResource("2_jehhd")
+current = true
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
-[connection signal="animation_finished" from="Game/AnimationPlayer" to="Game" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Game/Level/AnimationPlayer" to="Game" method="_on_animation_player_animation_finished"]

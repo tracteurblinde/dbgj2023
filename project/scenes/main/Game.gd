@@ -19,12 +19,14 @@ func _process(_delta):
 func transition_to_gamecam():
 	if intro_cam_finished and intro_dialog_finished:
 		GameCam.set_current(true)
-		$Camera3D.visible = false
+		$Level/Camera3D.visible = false
 
 
 func _on_ui_intro_finished():
+	# TODO: Move into level script
+
 	# Set the last position/rotation in the camera_intro animation to the position of the character camera
-	var animation: Animation = $AnimationPlayer.get_animation("camera_intro")
+	var animation: Animation = $Level/AnimationPlayer.get_animation("camera_intro")
 	assert(animation != null)
 	assert(animation.get_track_count() == 2)
 	assert(animation.track_get_type(0) == Animation.TYPE_POSITION_3D)
@@ -40,7 +42,7 @@ func _on_ui_intro_finished():
 	animation.track_set_key_value(1, rotation_key_count - 1, game_cam_rotation)
 	#animation.track_set_key_value(1, rotation_key_count - 2, game_cam_rotation)
 
-	$AnimationPlayer.play("camera_intro")
+	$Level/AnimationPlayer.play("camera_intro")
 	Dialogic.start("test")
 
 

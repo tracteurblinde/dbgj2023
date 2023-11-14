@@ -1,15 +1,15 @@
 [remap]
 
-importer="animation_library"
+importer="scene"
 importer_version=1
-type="AnimationLibrary"
-uid="uid://cqe3yhywh7uwr"
-path="res://.godot/imported/idle.fbx-427126cb4c772b1de19d5441502ba968.res"
+type="PackedScene"
+uid="uid://pm7767kqyri"
+path="res://.godot/imported/Casual.glb-96f4a6f61bd57b05a43e87b7ed2b5181.scn"
 
 [deps]
 
-source_file="res://3pp/mixamo/idle.fbx"
-dest_files=["res://.godot/imported/idle.fbx-427126cb4c772b1de19d5441502ba968.res"]
+source_file="res://3pp/mixamo/Casual.glb"
+dest_files=["res://.godot/imported/Casual.glb-96f4a6f61bd57b05a43e87b7ed2b5181.scn"]
 
 [params]
 
