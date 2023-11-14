@@ -20,6 +20,7 @@ func transition_to_gamecam():
 	if intro_cam_finished and intro_dialog_finished:
 		GameCam.set_current(true)
 		$Level/Camera3D.visible = false
+		$Player.active = true
 
 
 func _on_ui_intro_finished():

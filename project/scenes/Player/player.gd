@@ -4,6 +4,9 @@ const LERP_VALUE : float = 0.15
 
 var snap_vector : Vector3 = Vector3.DOWN
 var speed : float
+@export var active : bool = false
+
+var frames_processed = 0
 
 @export_group("Movement variables")
 @export var walk_speed : float = 2.0
@@ -17,7 +20,15 @@ const ANIMATION_BLEND : float = 7.0
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 @onready var animator : AnimationTree = $AnimationTree
 
+func is_active():
+	return active
+
 func _physics_process(delta):
+	if not active:
+		return
+
+	frames_processed += 1
+	
 	var move_direction : Vector3 = Vector3.ZERO
 	move_direction.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 	move_direction.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
@@ -46,7 +57,10 @@ func _physics_process(delta):
 	
 	apply_floor_snap()
 	move_and_slide()
-	animate(delta)
+
+	# Ignore the first couple frames to avoid a weird animation glitch
+	if frames_processed > 2:
+		animate(delta)
 
 func animate(delta):
 	if is_on_floor():

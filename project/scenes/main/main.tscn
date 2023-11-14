@@ -313,7 +313,6 @@ scale = Vector2(1e-05, 1)
 color = Color(0, 0, 0, 1)
 
 [node name="SuperTitle" type="Label" parent="UI"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -330,7 +329,6 @@ text = "Desert Bus:"
 label_settings = SubResource("LabelSettings_r76lp")
 
 [node name="Title" type="Label" parent="UI"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -348,7 +346,6 @@ label_settings = SubResource("LabelSettings_2aurj")
 horizontal_alignment = 1
 
 [node name="PressAnyKey" type="Label" parent="UI"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 389.0
 offset_top = 395.0
@@ -368,7 +365,6 @@ libraries = {
 script = ExtResource("2_2x67g")
 
 [node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.96139, 0)
 
 [node name="Level" type="Node3D" parent="Game"]
 
