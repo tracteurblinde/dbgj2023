@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=29 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://burkx0alsj6lp" path="res://3pp/kenney/space_kit/space_rock_large_a.tscn" id="11_oais1"]
 [ext_resource type="PackedScene" uid="uid://bevwai2l6cu8g" path="res://3pp/kenney/space_kit/space_rock_large_b.tscn" id="12_dlsfj"]
 [ext_resource type="PackedScene" uid="uid://beywo5kgopjs6" path="res://assets/shift_banner/alpha_flight.tscn" id="13_uwppi"]
+[ext_resource type="PackedScene" uid="uid://xxbsu0730d4n" path="res://3pp/kenney/survival_kit/rock_a.tscn" id="14_ek0br"]
+[ext_resource type="PackedScene" uid="uid://dnycdtvgnisxp" path="res://3pp/kenney/survival_kit/rock_b.tscn" id="15_ueop4"]
+[ext_resource type="PackedScene" uid="uid://di5374rf05cyk" path="res://3pp/kenney/survival_kit/rock_c.tscn" id="16_52h4t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r76lp"]
 font = ExtResource("2_jhd37")
@@ -269,6 +272,11 @@ _data = {
 "camera_intro": SubResource("Animation_3wv71")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_226r2"]
+albedo_color = Color(0.270588, 0, 0.0745098, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlhka"]
+
 [node name="Main" type="Node3D"]
 
 [node name="UI" type="Control" parent="."]
@@ -379,23 +387,104 @@ shadow_enabled = true
 spot_range = 7.11108
 spot_angle = 26.6014
 
-[node name="geometry" type="Node3D" parent="Game/Level"]
+[node name="Start" type="Marker3D" parent="Game/Level"]
 
-[node name="rockFlat" parent="Game/Level/geometry" instance=ExtResource("9_ej8vu")]
+[node name="platforms" type="Node3D" parent="Game/Level"]
+
+[node name="rockFlat" parent="Game/Level/platforms" instance=ExtResource("9_ej8vu")]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.325731, -0.916573)
 
-[node name="space_rocks_small_a" parent="Game/Level/geometry" instance=ExtResource("10_je8ld")]
+[node name="space_rocks_small_a" parent="Game/Level/platforms" instance=ExtResource("10_je8ld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245556, 0.00426891, -1.65912)
 
-[node name="space_rock_large_a" parent="Game/Level/geometry" instance=ExtResource("11_oais1")]
+[node name="space_rock_large_a" parent="Game/Level/platforms" instance=ExtResource("11_oais1")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.09226, -1.06449, -7.64892)
 
-[node name="space_rock_large_b" parent="Game/Level/geometry" instance=ExtResource("12_dlsfj")]
+[node name="space_rock_large_b" parent="Game/Level/platforms" instance=ExtResource("12_dlsfj")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.456737, -0.765032, -4.31275)
 
-[node name="AlphaFlight" parent="Game/Level/geometry" instance=ExtResource("13_uwppi")]
+[node name="AlphaFlight" parent="Game/Level/platforms" instance=ExtResource("13_uwppi")]
 transform = Transform3D(0.755728, 0, 0.654886, 0, 1, 0, -0.654886, 0, 0.755728, -1.37019, 0.465724, -8.06452)
+
+[node name="bottom" type="Node3D" parent="Game/Level"]
+
+[node name="RedRock" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
+transform = Transform3D(-1.74846e-06, 0, 40, 0, 40, 0, -40, 0, -1.74846e-06, -2.46458, -8.77125, -26.739)
+
+[node name="rockFlat" parent="Game/Level/bottom/RedRock" index="0"]
+material_override = SubResource("StandardMaterial3D_226r2")
+surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
+
+[node name="RedRock2" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
+transform = Transform3D(30.0888, 0, 26.3565, 0, 40, 0, -26.3565, 0, 30.0888, 5.33947, -8.77125, -49.394)
+
+[node name="rockFlat" parent="Game/Level/bottom/RedRock2" index="0"]
+material_override = SubResource("StandardMaterial3D_226r2")
+surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
+
+[node name="CollisionShape3D" parent="Game/Level/bottom/RedRock2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="RedRock3" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
+transform = Transform3D(0.326031, 0, -39.9987, 0, 40, 0, 39.9987, 0, 0.326031, 0.548634, -8.77125, -87.7572)
+
+[node name="rockFlat" parent="Game/Level/bottom/RedRock3" index="0"]
+material_override = SubResource("StandardMaterial3D_226r2")
+surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
+
+[node name="RedRock4" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
+transform = Transform3D(29.5787, 0, -26.9277, 0, 40, 0, 26.9277, 0, 29.5787, -26.565, -8.77125, -119.729)
+
+[node name="rockFlat" parent="Game/Level/bottom/RedRock4" index="0"]
+material_override = SubResource("StandardMaterial3D_226r2")
+surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
+
+[node name="walls" type="Node3D" parent="Game/Level"]
+
+[node name="rockA" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -89.7555, -4.76837e-07, 2.09661)
+
+[node name="rockA2" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
+transform = Transform3D(-114.753, 0, 32.9874, 0, 119.401, 0, -32.9874, 0, -114.753, -4.69291, -3.87271, 16.6418)
+
+[node name="rockA3" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
+transform = Transform3D(21.9742, 0, 117.361, 0, 119.401, 0, -117.361, 0, 21.9742, -33.6223, -2.89989, -9.74642)
+
+[node name="rockA4" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
+transform = Transform3D(-67.7535, 0, -23.2382, 0, 71.6279, 0, 23.2382, 0, -67.7535, -31.0298, -11.8599, -59.7409)
+
+[node name="rockB" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -94.879, 0, 29.0328)
+
+[node name="rockB2" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
+transform = Transform3D(140.428, 0, 27.0014, 0, 143, 0, -27.0014, 0, 140.428, 51.6439, -9.83974, -2.45059)
+
+[node name="rockB4" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
+transform = Transform3D(-238.551, 0, 50.0055, 0, 243.736, 0, -50.0055, 0, -238.551, 50.5097, -33.2126, -86.8022)
+
+[node name="rockB3" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
+transform = Transform3D(-18.2803, 0, 45.7573, 0, 49.2737, 0, -45.7573, 0, -18.2803, -24.0062, -9.83974, -76.8028)
+
+[node name="rockC" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
+transform = Transform3D(-8.74228e-07, 0, -20, 0, 20, 0, 20, 0, -8.74228e-07, -70.9655, -4.76837e-07, 49.9937)
+
+[node name="rockC2" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
+transform = Transform3D(39.5741, 0, 130.074, 0, 135.961, 0, -130.074, 0, 39.5741, -55.0099, -14.4108, -65.801)
+
+[node name="rockC3" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
+transform = Transform3D(32.2953, 0, 132.07, 0, 135.961, 0, -132.07, 0, 32.2953, 2.82344, -14.4108, -169.646)
+
+[node name="rockC4" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
+transform = Transform3D(132.863, 0, 28.8594, 0, 135.961, 0, -28.8594, 0, 132.863, -29.8497, -14.4108, -169.796)
+
+[node name="rockC5" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
+transform = Transform3D(-10.3811, 0, -135.564, 0, 135.961, 0, 135.564, 0, -10.3811, -73.6747, -14.4108, -107.426)
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Game/Level/AnimationPlayer" to="Game" method="_on_animation_player_animation_finished"]
+
+[editable path="Game/Level/bottom/RedRock"]
+[editable path="Game/Level/bottom/RedRock2"]
+[editable path="Game/Level/bottom/RedRock3"]
+[editable path="Game/Level/bottom/RedRock4"]
