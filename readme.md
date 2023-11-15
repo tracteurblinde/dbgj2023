@@ -17,7 +17,8 @@ Textures:
 - Skybox and sand texture - [Polyhaven](https://polyhaven.com/)
 
 Models:
- - [Quaternius](https://quaternius.com/)
+ - Casual Player - [Quaternius](https://quaternius.com/)
+ - Rocks - [Kenney](https://kenney.nl/)
 
 This project uses the [Godot Engine](https://godotengine.org/) and the following Godot Plugins and Assets:
 - [Dialogic](https://github.com/coppolaemilio/dialogic)
