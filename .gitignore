@@ -1,1 +1,7 @@
 build/
+
+#vim
+*~
+
+#krita autosave
+*-autosave.kra

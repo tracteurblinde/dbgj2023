@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=24 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cmovmeg7hc85a" path="res://scenes/Player/player.tscn" id="10_mrrum"]
 [ext_resource type="PackedScene" uid="uid://burkx0alsj6lp" path="res://3pp/kenney/space_kit/space_rock_large_a.tscn" id="11_oais1"]
 [ext_resource type="PackedScene" uid="uid://bevwai2l6cu8g" path="res://3pp/kenney/space_kit/space_rock_large_b.tscn" id="12_dlsfj"]
+[ext_resource type="PackedScene" uid="uid://beywo5kgopjs6" path="res://assets/shift_banner/alpha_flight.tscn" id="13_uwppi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r76lp"]
 font = ExtResource("2_jhd37")
@@ -391,6 +392,9 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.09226, -1.06449, -7.64892)
 
 [node name="space_rock_large_b" parent="Game/Level/geometry" instance=ExtResource("12_dlsfj")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.456737, -0.765032, -4.31275)
+
+[node name="AlphaFlight" parent="Game/Level/geometry" instance=ExtResource("13_uwppi")]
+transform = Transform3D(0.755728, 0, 0.654886, 0, 1, 0, -0.654886, 0, 0.755728, -1.37019, 0.465724, -8.06452)
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
