@@ -410,28 +410,28 @@ transform = Transform3D(0.755728, 0, 0.654886, 0, 1, 0, -0.654886, 0, 0.755728, 
 [node name="bottom" type="Node3D" parent="Game/Level"]
 
 [node name="RedRock" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
-transform = Transform3D(-1.74846e-06, 0, 40, 0, 40, 0, -40, 0, -1.74846e-06, -2.46458, -8.77125, -26.739)
+transform = Transform3D(-3.49691e-06, 0, 80, 0, 80, 0, -80, 0, -3.49691e-06, -2.46458, -13.6509, -26.739)
 
 [node name="rockFlat" parent="Game/Level/bottom/RedRock" index="0"]
 material_override = SubResource("StandardMaterial3D_226r2")
 surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
 
 [node name="RedRock2" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
-transform = Transform3D(30.0888, 0, 26.3565, 0, 40, 0, -26.3565, 0, 30.0888, 5.33947, -8.77125, -49.394)
+transform = Transform3D(60.1776, 0, 52.713, 0, 80, 0, -52.713, 0, 60.1776, 26.1524, -13.6509, -97.5065)
 
 [node name="rockFlat" parent="Game/Level/bottom/RedRock2" index="0"]
 material_override = SubResource("StandardMaterial3D_226r2")
 surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
 
 [node name="RedRock3" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
-transform = Transform3D(0.326031, 0, -39.9987, 0, 40, 0, 39.9987, 0, 0.326031, 0.548634, -8.77125, -87.7572)
+transform = Transform3D(0.652064, 0, -79.9973, 0, 80, 0, 79.9973, 0, 0.652064, 36.0581, -13.6509, -167.533)
 
 [node name="rockFlat" parent="Game/Level/bottom/RedRock3" index="0"]
 material_override = SubResource("StandardMaterial3D_226r2")
 surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
 
 [node name="RedRock4" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
-transform = Transform3D(29.5787, 0, -26.9277, 0, 40, 0, 26.9277, 0, 29.5787, -26.565, -8.77125, -119.729)
+transform = Transform3D(59.1574, 0, -53.8554, 0, 80, 0, 53.8554, 0, 59.1574, 0.856499, -13.6509, -237.999)
 
 [node name="rockFlat" parent="Game/Level/bottom/RedRock4" index="0"]
 material_override = SubResource("StandardMaterial3D_226r2")
@@ -440,43 +440,43 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
 [node name="walls" type="Node3D" parent="Game/Level"]
 
 [node name="rockA" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -89.7555, -4.76837e-07, 2.09661)
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -233.868, -4.76837e-07, 225.82)
 
 [node name="rockA2" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
-transform = Transform3D(-114.753, 0, 32.9874, 0, 119.401, 0, -32.9874, 0, -114.753, -4.69291, -3.87271, 16.6418)
+transform = Transform3D(-422.875, 0, 121.561, 0, 440.004, 0, -121.561, 0, -422.875, -127.313, -51.0013, -61.6599)
 
 [node name="rockA3" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
-transform = Transform3D(21.9742, 0, 117.361, 0, 119.401, 0, -117.361, 0, 21.9742, -33.6223, -2.89989, -9.74642)
+transform = Transform3D(439.671, 0, 17.0208, 0, 440.004, 0, -17.0208, 0, 439.671, -33.3004, -44.3281, 112.721)
 
 [node name="rockA4" parent="Game/Level/walls" instance=ExtResource("14_ek0br")]
-transform = Transform3D(-67.7535, 0, -23.2382, 0, 71.6279, 0, 23.2382, 0, -67.7535, -31.0298, -11.8599, -59.7409)
+transform = Transform3D(-132.427, 0, -45.4202, 0, 140, 0, 45.4202, 0, -132.427, -356.228, -11.8599, -59.7409)
 
 [node name="rockB" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -94.879, 0, 29.0328)
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -494.287, 0, -103.184)
 
 [node name="rockB2" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
-transform = Transform3D(140.428, 0, 27.0014, 0, 143, 0, -27.0014, 0, 140.428, 51.6439, -9.83974, -2.45059)
+transform = Transform3D(-280.708, 0, -72.8207, 0, 290, 0, 72.8207, 0, -280.708, 96.1858, -33.7511, -240.447)
 
 [node name="rockB4" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
-transform = Transform3D(-238.551, 0, 50.0055, 0, 243.736, 0, -50.0055, 0, -238.551, 50.5097, -33.2126, -86.8022)
+transform = Transform3D(-382.91, 0, 321.528, 0, 500, 0, -321.528, 0, -382.91, 108.673, -74.9709, -28.6692)
 
 [node name="rockB3" parent="Game/Level/walls" instance=ExtResource("15_ueop4")]
-transform = Transform3D(-18.2803, 0, 45.7573, 0, 49.2737, 0, -45.7573, 0, -18.2803, -24.0062, -9.83974, -76.8028)
+transform = Transform3D(-37.0995, 0, 92.8635, 0, 100, 0, -92.8635, 0, -37.0995, -143.571, -9.83976, -449.942)
 
 [node name="rockC" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
-transform = Transform3D(-8.74228e-07, 0, -20, 0, 20, 0, 20, 0, -8.74228e-07, -70.9655, -4.76837e-07, 49.9937)
+transform = Transform3D(-91.7015, 0, -77.4005, 0, 120, 0, 77.4005, 0, -91.7015, 48.7504, -8.95507, -30.6183)
 
 [node name="rockC2" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
-transform = Transform3D(39.5741, 0, 130.074, 0, 135.961, 0, -130.074, 0, 39.5741, -55.0099, -14.4108, -65.801)
+transform = Transform3D(233.055, 0, 136.328, 0, 270, 0, -136.328, 0, 233.055, -67.8469, -20.4617, -115.95)
 
 [node name="rockC3" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
-transform = Transform3D(32.2953, 0, 132.07, 0, 135.961, 0, -132.07, 0, 32.2953, 2.82344, -14.4108, -169.646)
+transform = Transform3D(64.1339, 0, 262.272, 0, 270, 0, -262.272, 0, 64.1339, 117.875, -14.4108, -135.013)
 
 [node name="rockC4" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
-transform = Transform3D(132.863, 0, 28.8594, 0, 135.961, 0, -28.8594, 0, 132.863, -29.8497, -14.4108, -169.796)
+transform = Transform3D(117.67, 0, 243.01, 0, 270, 0, -243.01, 0, 117.67, -54.5722, -14.4108, -241.231)
 
 [node name="rockC5" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
-transform = Transform3D(-10.3811, 0, -135.564, 0, 135.961, 0, 135.564, 0, -10.3811, -73.6747, -14.4108, -107.426)
+transform = Transform3D(266.569, 0, -42.9074, 0, 270, 0, 42.9074, 0, 266.569, 58.7491, -14.4108, -332.7)
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
