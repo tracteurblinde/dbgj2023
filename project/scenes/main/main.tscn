@@ -352,7 +352,7 @@ libraries = {
 script = ExtResource("2_2x67g")
 
 [node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.425507, 5.95596, 11.6297)
 
 [node name="Level" type="Node3D" parent="Game"]
 
@@ -373,7 +373,7 @@ transform = Transform3D(-0.0141407, -0.869695, 0.493386, 0.44686, 0.435922, 0.78
 shadow_enabled = true
 
 [node name="CupOfCoffee" parent="Game/Level" instance=ExtResource("2_ocyxa")]
-transform = Transform3D(0.126, 0, 0, 0, 0.1, 0, 0, 0, 0.126, 0.139988, 0.944961, 0.446563)
+transform = Transform3D(0.235376, 0, -0.0842492, 0, 0.2, 0, 0.0842492, 0, 0.235376, 0.168266, 6.26041, -6.14035)
 skeleton = NodePath("../../..")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Game/Level"]
@@ -389,23 +389,24 @@ spot_range = 7.11108
 spot_angle = 26.6014
 
 [node name="Start" type="Marker3D" parent="Game/Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426, 5.956, 11.63)
 
 [node name="platforms" type="Node3D" parent="Game/Level"]
 
 [node name="rockFlat" parent="Game/Level/platforms" instance=ExtResource("9_ej8vu")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.325731, -0.916573)
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0, 5.31272, 9.86714)
 
 [node name="space_rocks_small_a" parent="Game/Level/platforms" instance=ExtResource("10_je8ld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245556, 0.00426891, -1.65912)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.733929, 5.9186, 8.64697)
 
 [node name="space_rock_large_a" parent="Game/Level/platforms" instance=ExtResource("11_oais1")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.09226, -1.06449, -7.64892)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -1.09226, 4.10263, -7.64892)
 
 [node name="space_rock_large_b" parent="Game/Level/platforms" instance=ExtResource("12_dlsfj")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.456737, -0.765032, -4.31275)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -5.88411, 5.15715, -0.316298)
 
 [node name="AlphaFlight" parent="Game/Level/platforms" instance=ExtResource("13_uwppi")]
-transform = Transform3D(0.755728, 0, 0.654886, 0, 1, 0, -0.654886, 0, 0.755728, -1.37019, 0.465724, -8.06452)
+transform = Transform3D(1.51146, 0, 1.30977, 0, 2, 0, -1.30977, 0, 1.51146, -1.37019, 7.19323, -8.46559)
 
 [node name="bottom" type="Node3D" parent="Game/Level"]
 
