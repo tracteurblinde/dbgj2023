@@ -422,9 +422,6 @@ transform = Transform3D(30.0888, 0, 26.3565, 0, 40, 0, -26.3565, 0, 30.0888, 5.3
 material_override = SubResource("StandardMaterial3D_226r2")
 surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
 
-[node name="CollisionShape3D" parent="Game/Level/bottom/RedRock2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="RedRock3" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
 transform = Transform3D(0.326031, 0, -39.9987, 0, 40, 0, 39.9987, 0, 0.326031, 0.548634, -8.77125, -87.7572)
 
