@@ -352,6 +352,7 @@ libraries = {
 script = ExtResource("2_2x67g")
 
 [node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 
 [node name="Level" type="Node3D" parent="Game"]
 
