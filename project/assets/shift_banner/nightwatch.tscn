@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://1cq4wflhusmm"]
+[gd_scene load_steps=5 format=3 uid="uid://1cq4wflhusmm"]
 
 [ext_resource type="PackedScene" uid="uid://b1f2taud8on14" path="res://3pp/quaterius/Medieval Village Pack - Dec 2020/Fence.fbx" id="1_33acm"]
+[ext_resource type="Material" uid="uid://dqwpaagsgwgot" path="res://assets/shift_banner/fence_material.tres" id="2_53781"]
 [ext_resource type="Texture2D" uid="uid://dwhyy0w3rrekt" path="res://3pp/dbgj/nightwatch.png" id="2_dth46"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvw8a"]
@@ -11,6 +12,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Fence" parent="." instance=ExtResource("1_33acm")]
 transform = Transform3D(-1.74846e-07, -2, 0, 4, -8.74228e-08, 0, 0, 0, 2, 0.220958, 1.03102, 0.000262976)
+
+[node name="Fence" parent="Fence/RootNode" index="0"]
+material_override = ExtResource("2_53781")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 4, 0, 0, 0, 3, -0.0617268, 1.5304, 0.0312377)
