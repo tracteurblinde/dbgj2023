@@ -8,7 +8,6 @@ var speed: float
 @export var enable_double_jump: bool = true
 @export var enable_dash: bool = true
 
-var frames_processed = 0
 var num_jumps = 0
 @export var max_jumps = 2
 
@@ -33,6 +32,11 @@ var last_w_delta: float = 0.0
 var looking_for_combo: bool = false
 var dash_remaining: float = 0.0
 
+var floor_state := true
+var floor_state_shadow := true
+@onready var time_at_floor_state := floor_snap_time * 2
+@export var floor_snap_time: float = 0.05
+
 
 func reset():
 	last_w_delta = 0.0
@@ -54,7 +58,17 @@ func _physics_process(delta):
 	if not active:
 		return
 
-	frames_processed += 1
+	var on_floor := is_on_floor()
+	if on_floor == floor_state_shadow:
+		time_at_floor_state += delta
+	else:
+		time_at_floor_state = 0
+		floor_state_shadow = on_floor
+
+	if time_at_floor_state < floor_snap_time:
+		on_floor = floor_state
+	elif on_floor != floor_state_shadow:
+		floor_state_shadow = on_floor
 
 	var dashing := false
 	if enable_dash:
@@ -114,10 +128,11 @@ func _physics_process(delta):
 
 	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
 	var is_jumping := false
-	if enable_double_jump:
+	if num_jumps == 0 and on_floor:
+		is_jumping = Input.is_action_just_pressed("move_jump")
+	elif enable_double_jump:
 		is_jumping = Input.is_action_just_pressed("move_jump") and num_jumps < max_jumps
-	else:
-		is_jumping = Input.is_action_just_pressed("move_jump") and is_on_floor()
+
 	if is_jumping:
 		velocity.y = jump_strength
 		snap_vector = Vector3.ZERO
@@ -134,13 +149,11 @@ func _physics_process(delta):
 	apply_floor_snap()
 	move_and_slide()
 
-	# Ignore the first couple frames to avoid a weird animation glitch
-	if frames_processed > 2:
-		animate(delta)
+	animate(delta, on_floor)
 
 
-func animate(delta):
-	if is_on_floor():
+func animate(delta, on_floor: bool):
+	if on_floor:
 		animator.set("parameters/ground_air_transition/transition_request", "grounded")
 
 		if velocity.length() > 0:
