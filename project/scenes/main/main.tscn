@@ -540,6 +540,12 @@ banner = 2
 [node name="night_platform" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
 transform = Transform3D(-0.819556, 0, 3.91514, 0, 4, 0, -3.91514, 0, -0.819556, -12.2621, 0.786125, -24.0178)
 
+[node name="night_platform17" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(2.11826, 0, 3.39308, 0, 4, 0, -3.39308, 0, 2.11826, 3.9314, 1.04959, -28.7887)
+
+[node name="night_platform18" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-1.8745, 0, 3.53359, 0, 4, 0, -3.53359, 0, -1.8745, 0.520409, 0.786125, -46.7594)
+
 [node name="night_platform2" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
 transform = Transform3D(-3.91514, 0, -0.819556, 0, 4, 0, 0.819556, 0, -3.91514, -23.7906, -7.5061, -26.0615)
 
@@ -547,25 +553,37 @@ transform = Transform3D(-3.91514, 0, -0.819556, 0, 4, 0, 0.819556, 0, -3.91514, 
 transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -37.2542, -13.6036, -26.0615)
 
 [node name="night_platform4" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
-transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -50.2854, -20.4222, -36.5167)
+transform = Transform3D(-1.95053, 0, 3.4922, 0, 4, 0, -3.4922, 0, -1.95053, -50.2854, -20.4222, -36.5167)
+
+[node name="night_platform11" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.99419, 0, 0.215548, 0, 4, 0, -0.215548, 0, -3.99419, -62.2559, -23.3108, -37.4259)
+
+[node name="night_platform14" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-0.0905405, 0, 3.99897, 0, 4, 0, -3.99897, 0, -0.0905405, -75.2871, -26.5858, -49.0933)
+
+[node name="night_platform16" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-0.901844, 0, -3.89701, 0, 4, 0, 3.89701, 0, -0.901844, -80.4389, -18.6088, -69.3849)
+
+[node name="night_platform13" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72995, 0, -1.44481, 0, 4, 0, 1.44481, 0, -3.72995, -86.9545, -26.6719, -31.8195)
 
 [node name="night_platform5" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
-transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -44.8305, -17.5433, -51.9723)
+transform = Transform3D(-1.65668, 0, -3.6408, 0, 4, 0, 3.6408, 0, -1.65668, -44.8305, -17.5433, -51.9723)
 
 [node name="night_platform6" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
-transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -37.2542, -11.3307, -61.6699)
+transform = Transform3D(-2.16624, 0, -3.36264, 0, 4, 0, 3.36264, 0, -2.16624, -36.4966, -11.3307, -63.3367)
 
 [node name="night_platform7" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
-transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -28.7688, -4.05751, -75.1557)
+transform = Transform3D(-1.71643, 0, -3.61301, 0, 4, 0, 3.61301, 0, -1.71643, -28.7688, -4.05751, -75.1557)
 
 [node name="night_platform8" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
-transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -22.5563, -9.36089, -88.4899)
+transform = Transform3D(0.915239, 0, -3.89388, 0, 4, 0, 3.89388, 0, 0.915239, -22.5563, -9.36089, -88.4899)
 
 [node name="night_platform9" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
-transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -35.4359, -12.9975, -96.9753)
+transform = Transform3D(-3.59744, 0, 1.74884, 0, 4, 0, -1.74884, 0, -3.59744, -35.4359, -12.9975, -96.9753)
 
 [node name="night_platform10" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
-transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -48.164, -5.72429, -104.097)
+transform = Transform3D(-3.45126, 0, 2.02209, 0, 4, 0, -2.02209, 0, -3.45126, -46.1942, -5.72429, -103.491)
 
 [node name="zeta" type="Node3D" parent="Game/Level"]
 
