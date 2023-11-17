@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxuwbthrdnvat"]
+
+[ext_resource type="PackedScene" uid="uid://nlhc34hqy8db" path="res://assets/platforms/green_platform.tscn" id="1_ay4up"]
+[ext_resource type="Script" path="res://scenes/main/starting_platform.gd" id="1_suvkd"]
+[ext_resource type="PackedScene" uid="uid://cp4m3pyklm4ih" path="res://3pp/kenney/space_kit/space_rocks_small_a.tscn" id="2_epaj0"]
+[ext_resource type="PackedScene" uid="uid://burkx0alsj6lp" path="res://3pp/kenney/space_kit/space_rock_large_a.tscn" id="3_kt7o7"]
+[ext_resource type="PackedScene" uid="uid://beywo5kgopjs6" path="res://assets/shift_banner/alphaflight.tscn" id="4_c6gc5"]
+[ext_resource type="PackedScene" uid="uid://cvxdichv3hp7m" path="res://assets/shift_banner/dawnguard.tscn" id="5_6eymp"]
+[ext_resource type="PackedScene" uid="uid://1cq4wflhusmm" path="res://assets/shift_banner/nightwatch.tscn" id="7_c6mro"]
+[ext_resource type="PackedScene" uid="uid://c1xmdaxq06rqy" path="res://assets/shift_banner/zeta.tscn" id="8_o85ga"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pj8to"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.580392, 0.47451, 0.270588, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_go23y"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.278431, 0.32549, 0.0470588, 1)
+
+[node name="starting_platform" type="Node3D"]
+script = ExtResource("1_suvkd")
+
+[node name="starting_platform" parent="." instance=ExtResource("1_ay4up")]
+transform = Transform3D(0.12969, 0, 3.9979, 0, 4, 0, -3.9979, 0, 0.12969, 0.133115, 4.76837e-07, -1.29583)
+
+[node name="space_rocks_small_a" parent="." instance=ExtResource("2_epaj0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.39855, 0.555817, -2.58635)
+
+[node name="rocks_smallA" parent="space_rocks_small_a/tmpParent" index="0"]
+material_override = SubResource("StandardMaterial3D_pj8to")
+
+[node name="space_rock_large_a" parent="." instance=ExtResource("3_kt7o7")]
+transform = Transform3D(3.10736, 0, -5.13267, 0, 6, 0, 5.13267, 0, 3.10736, 2.52581, -1.31202, -2.82671)
+
+[node name="rock_largeA" parent="space_rock_large_a/tmpParent" index="0"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_go23y")
+
+[node name="Banners" type="Node3D" parent="."]
+transform = Transform3D(0.837709, 0, -0.546117, 0, 1, 0, 0.546117, 0, 0.837709, 3.20776, 1.81424, -3.62766)
+
+[node name="DawnguardBanner" parent="Banners" instance=ExtResource("5_6eymp")]
+
+[node name="AlphaflightBanner" parent="Banners" instance=ExtResource("4_c6gc5")]
+visible = false
+
+[node name="NightwatchBanner" parent="Banners" instance=ExtResource("7_c6mro")]
+visible = false
+
+[node name="ZetaFlag" parent="Banners" instance=ExtResource("8_o85ga")]
+visible = false
+
+[editable path="space_rocks_small_a"]
+[editable path="space_rock_large_a"]
