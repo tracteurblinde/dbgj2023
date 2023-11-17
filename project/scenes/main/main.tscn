@@ -345,7 +345,7 @@ libraries = {
 script = ExtResource("2_2x67g")
 
 [node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.425507, 5.27969, 11.6297)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0528371, 5.25499, 10.8808)
 
 [node name="Level" type="Node3D" parent="Game"]
 
@@ -397,6 +397,12 @@ transform = Transform3D(79.0411, 8.66352, -8.80052, -10.6379, 18.8098, -77.0262,
 
 [node name="BoundaryFlat5" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
 transform = Transform3D(-79.4775, 1.43581, -9.01461, 0.399832, 79.4759, 9.13358, 9.11948, 9.02888, -78.964, 11.4999, 54.2201, -143.047)
+
+[node name="BoundaryFlat6" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
+transform = Transform3D(41.3996, -1.69557, -68.4339, 1.56242, 79.978, -1.03641, 68.437, -0.800182, 41.4214, 11.4999, 52.0405, -206.357)
+
+[node name="BoundaryFlat7" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
+transform = Transform3D(64.9764, 0, -46.6697, 0, 80, 0, 46.6697, 0, 64.9764, -29.7435, 59.7576, -258.99)
 
 [node name="walls" type="Node3D" parent="Game/Level"]
 
@@ -473,22 +479,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67955, 0, 6.92492)
 banner = 1
 
 [node name="alpha_platform" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
-transform = Transform3D(-0.251023, 0, 3.99212, 0, 4, 0, -3.99212, 0, -0.251023, -9.85242, 10.9202, -10.5296)
+transform = Transform3D(-0.251023, 0, 3.99212, 0, 4, 0, -3.99212, 0, -0.251023, -9.85242, 10.9202, -8.83121)
 
 [node name="alpha_platform2" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
 transform = Transform3D(-0.251023, 0, 3.99212, 0, 4, 0, -3.99212, 0, -0.251023, 3.7614, 23.4129, -4.38821)
+
+[node name="alpha_platform3" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(-0.251023, 0, 3.99212, 0, 4, 0, -3.99212, 0, -0.251023, 11.7135, 44.1851, -12.4559)
+
+[node name="alpha_platform4" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(-0.251023, 0, 3.99212, 0, 4, 0, -3.99212, 0, -0.251023, 16.1608, 35.7391, -4.09679)
+
+[node name="alpha_platform8" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(-0.251023, 0, 3.99212, 0, 4, 0, -3.99212, 0, -0.251023, -16.0569, 35.7391, -20.0867)
+
+[node name="alpha_platform9" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(-2.74455, 0, -2.9099, 0, 4, 0, 2.9099, 0, -2.74455, -4.31187, 35.7391, -36.9256)
+
+[node name="alpha_platform10" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(1.84371, 0, 3.54975, 0, 4, 0, -3.54975, 0, 1.84371, 5.10983, 41.9114, -50.9754)
+
+[node name="alpha_platform11" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(0.913948, 0, 3.89419, 0, 4, 0, -3.89419, 0, 0.913948, 8.78592, 47.633, -65.0103)
+
+[node name="alpha_platform12" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(0.720979, 0, 3.93449, 0, 4, 0, -3.93449, 0, 0.720979, 9.86833, 53.8429, -77.3702)
+
+[node name="alpha_platform5" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(1.93918, 0, -3.49852, 0, 4, 0, 3.49852, 0, 1.93918, -18.7269, 23.4129, -7.65889)
+
+[node name="alpha_platform6" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(1.93918, 0, -3.49852, 0, 4, 0, 3.49852, 0, 1.93918, -24.8132, 46.7327, 4.16232)
+
+[node name="alpha_platform7" parent="Game/Level/alphaflight" instance=ExtResource("18_jdsnp")]
+transform = Transform3D(1.93918, 0, -3.49852, 0, 4, 0, 3.49852, 0, 1.93918, -30.2383, 36.1594, -5.91715)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Game/Level/alphaflight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.23403, 4.47408, -10.6193)
+layers = 4
+light_bake_mode = 1
+light_cull_mask = 4293918724
+omni_range = 62.5981
+omni_attenuation = 0.0877999
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Game/Level/alphaflight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.23403, 37.6568, -74.0937)
+layers = 4
+light_bake_mode = 1
+light_cull_mask = 4293918724
+omni_range = 62.5981
+omni_attenuation = 0.0877999
 
 [node name="nightwatch" type="Node3D" parent="Game/Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2441, 116.789, -173.964)
 
 [node name="start" parent="Game/Level/nightwatch" instance=ExtResource("15_1gyo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703125, 5.32734, 11.2181)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1334, 13.4906, -6.46146)
 banner = 2
 
 [node name="zeta" type="Node3D" parent="Game/Level"]
 
 [node name="start" parent="Game/Level/zeta" instance=ExtResource("15_1gyo8")]
-transform = Transform3D(0.26256, 0, 0.964916, 0, 1, 0, -0.964916, 0, 0.26256, 38.46, 78.0104, -212.296)
+transform = Transform3D(0.26256, 0, 0.964916, 0, 1, 0, -0.964916, 0, 0.26256, -10.9829, 119.833, -280.149)
 banner = 3
 
 [node name="night_platform" parent="." instance=ExtResource("20_jgs1a")]
@@ -507,5 +559,9 @@ visible = false
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat3" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat4" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat5" to="Game" method="_on_boundary_flat_hit"]
+[connection signal="hit" from="Game/Level/bottom/BoundaryFlat6" to="Game" method="_on_boundary_flat_hit"]
+[connection signal="hit" from="Game/Level/bottom/BoundaryFlat7" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="player_entered" from="Game/Level/dawnguard/start" to="Game" method="_on_checkpoint"]
 [connection signal="player_entered" from="Game/Level/alphaflight/start" to="Game" method="_on_checkpoint"]
+[connection signal="player_entered" from="Game/Level/nightwatch/start" to="Game" method="_on_checkpoint"]
+[connection signal="player_entered" from="Game/Level/zeta/start" to="Game" method="_on_checkpoint"]
