@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=36 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -11,11 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://cp4m3pyklm4ih" path="res://3pp/kenney/space_kit/space_rocks_small_a.tscn" id="10_je8ld"]
 [ext_resource type="PackedScene" uid="uid://cmovmeg7hc85a" path="res://scenes/Player/Player.tscn" id="10_mrrum"]
 [ext_resource type="PackedScene" uid="uid://burkx0alsj6lp" path="res://3pp/kenney/space_kit/space_rock_large_a.tscn" id="11_oais1"]
-[ext_resource type="PackedScene" uid="uid://bevwai2l6cu8g" path="res://3pp/kenney/space_kit/space_rock_large_b.tscn" id="12_dlsfj"]
-[ext_resource type="PackedScene" uid="uid://beywo5kgopjs6" path="res://assets/shift_banner/alpha_flight.tscn" id="13_uwppi"]
+[ext_resource type="PackedScene" uid="uid://beywo5kgopjs6" path="res://assets/shift_banner/alphaflight.tscn" id="13_uwppi"]
+[ext_resource type="PackedScene" uid="uid://nlhc34hqy8db" path="res://assets/platforms/green_platform.tscn" id="14_dado8"]
 [ext_resource type="PackedScene" uid="uid://xxbsu0730d4n" path="res://3pp/kenney/survival_kit/rock_a.tscn" id="14_ek0br"]
 [ext_resource type="PackedScene" uid="uid://dnycdtvgnisxp" path="res://3pp/kenney/survival_kit/rock_b.tscn" id="15_ueop4"]
 [ext_resource type="PackedScene" uid="uid://di5374rf05cyk" path="res://3pp/kenney/survival_kit/rock_c.tscn" id="16_52h4t"]
+[ext_resource type="PackedScene" uid="uid://cvxdichv3hp7m" path="res://assets/shift_banner/dawnguard.tscn" id="17_76kq3"]
+[ext_resource type="PackedScene" uid="uid://dh2qq42hh6kuo" path="res://assets/platforms/platform_alpha.tscn" id="18_jdsnp"]
+[ext_resource type="PackedScene" uid="uid://1cq4wflhusmm" path="res://assets/shift_banner/nightwatch.tscn" id="19_diww2"]
+[ext_resource type="PackedScene" uid="uid://c6uuk2axxlm4c" path="res://assets/platforms/platform_dawn.tscn" id="19_p00vd"]
+[ext_resource type="PackedScene" uid="uid://c1xmdaxq06rqy" path="res://assets/shift_banner/zeta.tscn" id="20_ffamm"]
+[ext_resource type="PackedScene" uid="uid://xv4x7jkb0utn" path="res://assets/platforms/platform_night.tscn" id="20_jgs1a"]
+[ext_resource type="PackedScene" uid="uid://rdm45e6j2iiw" path="res://assets/platforms/platform_zeta.tscn" id="21_xehrc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r76lp"]
 font = ExtResource("2_jhd37")
@@ -273,7 +280,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_226r2"]
-albedo_color = Color(0.270588, 0, 0.0745098, 1)
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlhka"]
 
@@ -373,7 +380,7 @@ transform = Transform3D(-0.0141407, -0.869695, 0.493386, 0.44686, 0.435922, 0.78
 shadow_enabled = true
 
 [node name="CupOfCoffee" parent="Game/Level" instance=ExtResource("2_ocyxa")]
-transform = Transform3D(0.235376, 0, -0.0842492, 0, 0.2, 0, 0.0842492, 0, 0.235376, 0.168266, 6.26041, -6.14035)
+transform = Transform3D(0.115363, 0, -0.221791, 0, 0.2, 0, 0.221791, 0, 0.115363, 2.6865, 7.29495, 8.26625)
 skeleton = NodePath("../../..")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Game/Level"]
@@ -388,26 +395,6 @@ shadow_enabled = true
 spot_range = 7.11108
 spot_angle = 26.6014
 
-[node name="Start" type="Marker3D" parent="Game/Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426, 5.956, 11.63)
-
-[node name="platforms" type="Node3D" parent="Game/Level"]
-
-[node name="rockFlat" parent="Game/Level/platforms" instance=ExtResource("9_ej8vu")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0, 5.31272, 9.86714)
-
-[node name="space_rocks_small_a" parent="Game/Level/platforms" instance=ExtResource("10_je8ld")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.733929, 5.9186, 8.64697)
-
-[node name="space_rock_large_a" parent="Game/Level/platforms" instance=ExtResource("11_oais1")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -1.09226, 4.10263, -7.64892)
-
-[node name="space_rock_large_b" parent="Game/Level/platforms" instance=ExtResource("12_dlsfj")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -5.88411, 5.15715, -0.316298)
-
-[node name="AlphaFlight" parent="Game/Level/platforms" instance=ExtResource("13_uwppi")]
-transform = Transform3D(1.51146, 0, 1.30977, 0, 2, 0, -1.30977, 0, 1.51146, -1.37019, 7.19323, -8.46559)
-
 [node name="bottom" type="Node3D" parent="Game/Level"]
 
 [node name="RedRock" parent="Game/Level/bottom" instance=ExtResource("9_ej8vu")]
@@ -421,6 +408,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
 transform = Transform3D(60.1776, 0, 52.713, 0, 80, 0, -52.713, 0, 60.1776, 26.1524, -13.6509, -97.5065)
 
 [node name="rockFlat" parent="Game/Level/bottom/RedRock2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_226r2")
 surface_material_override/0 = SubResource("StandardMaterial3D_vlhka")
 
@@ -478,6 +466,148 @@ transform = Transform3D(117.67, 0, 243.01, 0, 270, 0, -243.01, 0, 117.67, -54.57
 
 [node name="rockC5" parent="Game/Level/walls" instance=ExtResource("16_52h4t")]
 transform = Transform3D(266.569, 0, -42.9074, 0, 270, 0, 42.9074, 0, 266.569, 58.7491, -14.4108, -332.7)
+
+[node name="dawnguard" type="Node3D" parent="Game/Level"]
+
+[node name="start" type="Marker3D" parent="Game/Level/dawnguard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426, 5.956, 11.63)
+
+[node name="starting_platform" type="Node3D" parent="Game/Level/dawnguard"]
+
+[node name="starting_platform" parent="Game/Level/dawnguard/starting_platform" instance=ExtResource("14_dado8")]
+transform = Transform3D(0.12969, 0, 3.9979, 0, 4, 0, -3.9979, 0, 0.12969, 0, 5.313, 9.867)
+
+[node name="space_rocks_small_a" parent="Game/Level/dawnguard/starting_platform" instance=ExtResource("10_je8ld")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.733929, 5.9186, 8.64697)
+
+[node name="space_rock_large_a" parent="Game/Level/dawnguard/starting_platform" instance=ExtResource("11_oais1")]
+transform = Transform3D(0.748883, 0, -5.95308, 0, 6, 0, 5.95308, 0, 0.748883, 2.89077, 4.10263, 8.23805)
+
+[node name="DawnguardBanner" parent="Game/Level/dawnguard/starting_platform" instance=ExtResource("17_76kq3")]
+transform = Transform3D(1.57281, 0, -1.23542, 0, 2, 0, 1.23542, 0, 1.57281, 3.63361, 7.10263, 7.85859)
+
+[node name="dawn_platform" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-1.73759, 0, -3.60288, 0, 4, 0, 3.60288, 0, -1.73759, -3.10008, 5.89502, -2.46192)
+
+[node name="dawn_platform5" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(3.74399, 0, 1.40802, 0, 4, 0, -1.40802, 0, 3.74399, -13.847, 9.62065, -1.81162)
+
+[node name="dawn_platform2" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-1.73759, 0, -3.60288, 0, 4, 0, 3.60288, 0, -1.73759, -5.77527, 5.89503, -17.5077)
+
+[node name="dawn_platform3" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-1.73759, 0, -3.60288, 0, 4, 0, 3.60288, 0, -1.73759, -20.7098, 14.3513, 6.12569)
+
+[node name="dawn_platform4" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-1.73759, 0, -3.60288, 0, 4, 0, 3.60288, 0, -1.73759, -11.9836, 20.1195, 14.2251)
+
+[node name="dawn_platform6" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-3.37698, 0, -2.14384, 0, 4, 0, 2.14384, 0, -3.37698, 10.2521, 9.62065, -7.8444)
+
+[node name="dawn_platform7" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(0.964165, 0, 3.88206, 0, 4, 0, -3.88206, 0, 0.964165, 15.3469, 14.3513, -17.0173)
+
+[node name="dawn_platform8" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(0.964165, 0, 3.88206, 0, 4, 0, -3.88206, 0, 0.964165, 5.14896, 20.1195, -23.1613)
+
+[node name="dawn_platform9" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-3.37698, 0, -2.14384, 0, 4, 0, 2.14384, 0, -3.37698, -4.09649, 26.5876, -30.3883)
+
+[node name="dawn_platform10" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(0.964165, 0, 3.88206, 0, 4, 0, -3.88206, 0, 0.964165, 0.998286, 31.3183, -39.5612)
+
+[node name="dawn_platform15" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(3.15857, 0, -2.45427, 0, 4, 0, 2.45427, 0, 3.15857, -7.87461, 39.0986, -59.5291)
+
+[node name="dawn_platform16" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-3.99688, 0, 0.157946, 0, 4, 0, -0.157946, 0, -3.99688, 3.7524, 45.5667, -56.2981)
+
+[node name="dawn_platform17" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(3.15857, 0, -2.45427, 0, 4, 0, 2.45427, 0, 3.15857, 14.921, 50.2974, -52.522)
+
+[node name="dawn_platform18" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(0.0226189, 0, 3.99994, 0, 4, 0, -3.99994, 0, 0.0226189, 12.1647, 57.3322, -63.1143)
+
+[node name="dawn_platform19" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-2.77698, 0, -2.87896, 0, 4, 0, 2.87896, 0, -2.77698, 8.78979, 63.8003, -71.2009)
+
+[node name="dawn_platform20" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(0.0226189, 0, 3.99994, 0, 4, 0, -3.99994, 0, 0.0226189, 32.9501, 46.0146, -42.5368)
+
+[node name="dawn_platform12" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-0.662394, 0, 3.94477, 0, 4, 0, -3.94477, 0, -0.662394, -20.0192, 5.02664, -25.7021)
+
+[node name="dawn_platform13" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-2.24319, 0, -3.31181, 0, 4, 0, 3.31181, 0, -2.24319, -31.3786, 11.4947, -28.647)
+
+[node name="dawn_platform14" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(-0.662394, 0, 3.94477, 0, 4, 0, -3.94477, 0, -0.662394, -30.3605, 16.2254, -39.0903)
+
+[node name="dawn_platform11" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
+transform = Transform3D(0.964165, 0, 3.88206, 0, 4, 0, -3.88206, 0, 0.964165, -9.19966, 37.0865, -45.7052)
+
+[node name="alphaflight" type="Node3D" parent="Game/Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6688, 65.2222, -87.5811)
+
+[node name="starting_platform" type="Node3D" parent="Game/Level/alphaflight"]
+
+[node name="starting_platform" parent="Game/Level/alphaflight/starting_platform" instance=ExtResource("14_dado8")]
+transform = Transform3D(0.12969, 0, 3.9979, 0, 4, 0, -3.9979, 0, 0.12969, 0, 5.313, 9.867)
+
+[node name="space_rocks_small_a" parent="Game/Level/alphaflight/starting_platform" instance=ExtResource("10_je8ld")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.733929, 5.9186, 8.64697)
+
+[node name="space_rock_large_a" parent="Game/Level/alphaflight/starting_platform" instance=ExtResource("11_oais1")]
+transform = Transform3D(0.748883, 0, -5.95308, 0, 6, 0, 5.95308, 0, 0.748883, 2.89077, 4.10263, 8.23805)
+
+[node name="AlphaflightBanner" parent="Game/Level/alphaflight/starting_platform" instance=ExtResource("13_uwppi")]
+transform = Transform3D(1.63501, 0, -1.15184, 0, 2, 0, 1.15184, 0, 1.63501, 3.56068, 7.14557, 7.91344)
+
+[node name="nightwatch" type="Node3D" parent="Game/Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2441, 44.9731, -173.964)
+
+[node name="starting_platform" type="Node3D" parent="Game/Level/nightwatch"]
+
+[node name="starting_platform" parent="Game/Level/nightwatch/starting_platform" instance=ExtResource("14_dado8")]
+transform = Transform3D(0.12969, 0, 3.9979, 0, 4, 0, -3.9979, 0, 0.12969, 0, 5.313, 9.867)
+
+[node name="space_rocks_small_a" parent="Game/Level/nightwatch/starting_platform" instance=ExtResource("10_je8ld")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.733929, 5.9186, 8.64697)
+
+[node name="space_rock_large_a" parent="Game/Level/nightwatch/starting_platform" instance=ExtResource("11_oais1")]
+transform = Transform3D(0.748883, 0, -5.95308, 0, 6, 0, 5.95308, 0, 0.748883, 2.89077, 4.10263, 8.23805)
+
+[node name="NightwatchBanner" parent="Game/Level/nightwatch/starting_platform" instance=ExtResource("19_diww2")]
+transform = Transform3D(1.58166, 0, -1.22408, 0, 2, 0, 1.22408, 0, 1.58166, 3.81309, 7.10263, 8.01561)
+
+[node name="zeta" type="Node3D" parent="Game/Level"]
+
+[node name="starting_platform" type="Node3D" parent="Game/Level/zeta"]
+transform = Transform3D(0.160639, 0, 0.987013, 0, 1, 0, -0.987013, 0, 0.160639, 27.5459, 72.639, -214.175)
+
+[node name="starting_platform" parent="Game/Level/zeta/starting_platform" instance=ExtResource("14_dado8")]
+transform = Transform3D(0.12969, 0, 3.9979, 0, 4, 0, -3.9979, 0, 0.12969, 0, 5.313, 9.867)
+
+[node name="space_rocks_small_a" parent="Game/Level/zeta/starting_platform" instance=ExtResource("10_je8ld")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.733929, 5.9186, 8.64697)
+
+[node name="space_rock_large_a" parent="Game/Level/zeta/starting_platform" instance=ExtResource("11_oais1")]
+transform = Transform3D(0.748883, 0, -5.95308, 0, 6, 0, 5.95308, 0, 0.748883, 2.89077, 4.10263, 8.23805)
+
+[node name="ZetaFlag" parent="Game/Level/zeta/starting_platform" instance=ExtResource("20_ffamm")]
+transform = Transform3D(1.50839, 0, -1.3133, 0, 2, 0, 1.3133, 0, 1.50839, 3.6288, 7.10263, 7.9206)
+
+[node name="alpha_platform" parent="." instance=ExtResource("18_jdsnp")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.8077, 6.89373, -7.71416)
+visible = false
+
+[node name="night_platform" parent="." instance=ExtResource("20_jgs1a")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.8077, 5.15546, 2.26746)
+visible = false
+
+[node name="zeta_platform" parent="." instance=ExtResource("21_xehrc")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.8077, -0.450899, -7.71416)
+visible = false
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]

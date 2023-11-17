@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1xmdaxq06rqy"]
+
+[ext_resource type="PackedScene" uid="uid://b1f2taud8on14" path="res://3pp/quaterius/Medieval Village Pack - Dec 2020/Fence.fbx" id="1_31eo3"]
+[ext_resource type="Texture2D" uid="uid://bu6h5m06s7tqa" path="res://3pp/dbgj/zeta.png" id="2_6x7ny"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvw8a"]
+size = Vector3(3.15472, 0.001, 0.653503)
+
+[node name="ZetaFlag" type="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Fence" parent="." instance=ExtResource("1_31eo3")]
+transform = Transform3D(-1.74846e-07, -2, 0, 4, -8.74228e-08, 0, 0, 0, 2, 0.220958, 1.03102, 0.000262976)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 4, 0, 0, 0, 3, -0.0617268, 1.5304, 0.0312377)
+modulate = Color(1, 1, 1, 0.815686)
+pixel_size = 0.0003
+alpha_cut = 1
+texture = ExtResource("2_6x7ny")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1.62921e-07, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1.62921e-07, -0.0767758, 1.03229, -5.36397e-09)
+shape = SubResource("BoxShape3D_cvw8a")
+
+[editable path="Fence"]
