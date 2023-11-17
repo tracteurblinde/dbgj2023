@@ -69,7 +69,7 @@ transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_go23y")
 
 [node name="Banners" type="Node3D" parent="."]
-transform = Transform3D(0.837709, 0, -0.546117, 0, 1, 0, 0.546117, 0, 0.837709, 3.20776, -4.20267, -3.62766)
+transform = Transform3D(0.837709, 0, -0.546117, 0, 1, 0, 0.546117, 0, 0.837709, 3.20776, 1.14778, -3.62766)
 
 [node name="DawnguardBanner" parent="Banners" instance=ExtResource("5_6eymp")]
 
