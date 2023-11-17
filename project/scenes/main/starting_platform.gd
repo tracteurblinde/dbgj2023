@@ -17,6 +17,10 @@ func _ready():
 		$AnimationPlayer.advance(0)
 		$AnimationPlayer.stop()
 		$Banners.visible = false
+	else:
+		$Banners.visible = true
+		set_banner(banner)
+		$AnimationPlayer.play("raise_flag")
 
 
 func set_banner(value):
