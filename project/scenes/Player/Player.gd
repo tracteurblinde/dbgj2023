@@ -5,6 +5,8 @@ const LERP_VALUE: float = 0.15
 var snap_vector: Vector3 = Vector3.DOWN
 var speed: float
 @export var active: bool = false
+@export var enable_double_jump: bool = true
+@export var enable_dash: bool = true
 
 var frames_processed = 0
 var num_jumps = 0
@@ -14,7 +16,12 @@ var num_jumps = 0
 @export var walk_speed: float = 4.0
 @export var run_speed: float = 10.0
 @export var jump_strength: float = 30.0
+@export var dash_strength: float = 2.0
+@export var dash_length: float = 0.3
 @export var gravity: float = 60.0
+
+@export_group("Input Variables")
+@export var combo_timeout: float = 0.3
 
 const ANIMATION_BLEND: float = 7.0
 
@@ -22,16 +29,52 @@ const ANIMATION_BLEND: float = 7.0
 @onready var spring_arm_pivot: Node3D = $SpringArmPivot
 @onready var animator: AnimationTree = $AnimationTree
 
+var last_w_delta: float = 0.0
+var looking_for_combo: bool = false
+var dash_remaining: float = 0.0
+
 
 func is_active():
 	return active
 
+func is_dashing():
+	return dash_remaining > 0.0
 
 func _physics_process(delta):
 	if not active:
 		return
 
 	frames_processed += 1
+
+	var dashing := false
+	if enable_dash:
+		if Input.is_action_just_pressed("move_forward"):
+			if not looking_for_combo:
+				looking_for_combo = true
+				last_w_delta = 0.0
+			else:
+				looking_for_combo = false
+				if last_w_delta < combo_timeout:
+					print("Dash")
+					animator.set(
+						"parameters/roll_oneshot/request",
+						AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+					)
+					dash_remaining = dash_length
+					looking_for_combo = false
+					last_w_delta = 0.0
+				else:
+					last_w_delta = 0.0
+					looking_for_combo = true
+
+		if looking_for_combo:
+			last_w_delta += delta
+
+		if dash_remaining > 0.0:
+			dashing = true
+			dash_remaining -= delta
+		else:
+			dash_remaining = 0.0
 
 	var move_direction: Vector3 = Vector3.ZERO
 	move_direction.x = (
@@ -44,7 +87,9 @@ func _physics_process(delta):
 
 	velocity.y -= gravity * delta
 
-	if Input.is_action_pressed("move_walk"):
+	if dashing:
+		speed = run_speed * dash_strength
+	elif Input.is_action_pressed("move_walk"):
 		speed = walk_speed
 	else:
 		speed = run_speed
@@ -58,8 +103,11 @@ func _physics_process(delta):
 		)
 
 	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
-	# var is_jumping := is_on_floor() and Input.is_action_just_pressed("move_jump")
-	var is_jumping := Input.is_action_just_pressed("move_jump") and num_jumps < max_jumps
+	var is_jumping := false
+	if enable_double_jump:
+		is_jumping = Input.is_action_just_pressed("move_jump") and num_jumps < max_jumps
+	else:
+		is_jumping = Input.is_action_just_pressed("move_jump") and is_on_floor()
 	if is_jumping:
 		velocity.y = jump_strength
 		snap_vector = Vector3.ZERO

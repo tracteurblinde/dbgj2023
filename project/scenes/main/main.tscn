@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://b5bfhdfq7k3nn" path="res://3pp/IBMPlex/IBMPlexSans-Italic.ttf" id="3_yig4o"]
 [ext_resource type="PackedScene" uid="uid://bu02embj6nuol" path="res://3pp/kenney/survival_kit/rock_flat.tscn" id="9_ej8vu"]
 [ext_resource type="PackedScene" uid="uid://cp4m3pyklm4ih" path="res://3pp/kenney/space_kit/space_rocks_small_a.tscn" id="10_je8ld"]
-[ext_resource type="PackedScene" uid="uid://cmovmeg7hc85a" path="res://scenes/Player/player.tscn" id="10_mrrum"]
+[ext_resource type="PackedScene" uid="uid://cmovmeg7hc85a" path="res://scenes/Player/Player.tscn" id="10_mrrum"]
 [ext_resource type="PackedScene" uid="uid://burkx0alsj6lp" path="res://3pp/kenney/space_kit/space_rock_large_a.tscn" id="11_oais1"]
 [ext_resource type="PackedScene" uid="uid://bevwai2l6cu8g" path="res://3pp/kenney/space_kit/space_rock_large_b.tscn" id="12_dlsfj"]
 [ext_resource type="PackedScene" uid="uid://beywo5kgopjs6" path="res://assets/shift_banner/alpha_flight.tscn" id="13_uwppi"]
