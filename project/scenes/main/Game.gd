@@ -57,3 +57,15 @@ func _on_dialogic_signal(argument: String):
 	if argument == "intro_complete":
 		intro_dialog_finished = true
 		transition_to_gamecam()
+
+
+func _on_boundary_flat_hit(_flat: Node):
+	print("Boundary flat hit")
+
+
+func _on_alphaflight_checkpoint():
+	print("Alphaflight checkpoint")
+
+
+func _on_dawnguard_checkpoint():
+	print("Dawnguard checkpoint")

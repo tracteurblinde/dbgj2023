@@ -1,25 +1,29 @@
 @tool
 extends Node3D
 
-enum Banner {
-	DawnGuard = 0,
-	AlphaFlight = 1,
-	NightWatch = 2,
-	Zeta = 3
-}
+signal player_entered
+var has_player_entered := false
 
-@export var banner : Banner = Banner.DawnGuard:
+enum Banner { DawnGuard = 0, AlphaFlight = 1, NightWatch = 2, Zeta = 3 }
+
+@export var banner: Banner = Banner.DawnGuard:
 	set = set_banner
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if not Engine.is_editor_hint():
+		$AnimationPlayer.play("raise_flag", 0.0, false)
+		$AnimationPlayer.advance(0)
+		$AnimationPlayer.stop()
+		$Banners.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 	#set_banner(banner)
+
 
 func set_banner(value):
 	banner = value
@@ -28,3 +32,9 @@ func set_banner(value):
 	$Banners/NightwatchBanner.visible = value == Banner.NightWatch
 	$Banners/ZetaFlag.visible = value == Banner.Zeta
 
+
+func _on_area_3d_body_entered(_body: Node):
+	if not has_player_entered:
+		has_player_entered = true
+		$AnimationPlayer.play("raise_flag")
+		emit_signal("player_entered")
