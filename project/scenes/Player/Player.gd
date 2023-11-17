@@ -34,11 +34,21 @@ var looking_for_combo: bool = false
 var dash_remaining: float = 0.0
 
 
+func reset():
+	last_w_delta = 0.0
+	looking_for_combo = false
+	dash_remaining = 0.0
+	player_mesh.rotation.y = 0.0
+	velocity = Vector3.ZERO
+
+
 func is_active():
 	return active
 
+
 func is_dashing():
 	return dash_remaining > 0.0
+
 
 func _physics_process(delta):
 	if not active:
@@ -111,7 +121,6 @@ func _physics_process(delta):
 	if is_jumping:
 		velocity.y = jump_strength
 		snap_vector = Vector3.ZERO
-		print("Jumping")
 		if num_jumps > 0:
 			animator.set(
 				"parameters/flip_oneshot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE

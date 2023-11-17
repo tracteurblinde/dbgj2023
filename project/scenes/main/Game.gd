@@ -5,6 +5,8 @@ var intro_dialog_finished: bool = false
 
 @onready var GameCam: Camera3D = $Player.get_camera()
 
+var last_checkpoint: Node3D = null
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -60,12 +62,14 @@ func _on_dialogic_signal(argument: String):
 
 
 func _on_boundary_flat_hit(_flat: Node):
-	print("Boundary flat hit")
+	if last_checkpoint != null:
+		$Player.global_transform.origin = last_checkpoint.global_transform.origin
+		#$Player.global_transform.basis = last_checkpoint.global_transform.basis
+		$Player.reset()
+		$Player.active = true
+	else:
+		print("No last checkpoint")
 
 
-func _on_alphaflight_checkpoint():
-	print("Alphaflight checkpoint")
-
-
-func _on_dawnguard_checkpoint():
-	print("Dawnguard checkpoint")
+func _on_checkpoint(checkpoint: Node3D):
+	last_checkpoint = checkpoint

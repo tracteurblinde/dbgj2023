@@ -507,5 +507,5 @@ visible = false
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat3" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat4" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat5" to="Game" method="_on_boundary_flat_hit"]
-[connection signal="player_entered" from="Game/Level/dawnguard/start" to="Game" method="_on_dawnguard_checkpoint"]
-[connection signal="player_entered" from="Game/Level/alphaflight/start" to="Game" method="_on_alphaflight_checkpoint"]
+[connection signal="player_entered" from="Game/Level/dawnguard/start" to="Game" method="_on_checkpoint"]
+[connection signal="player_entered" from="Game/Level/alphaflight/start" to="Game" method="_on_checkpoint"]

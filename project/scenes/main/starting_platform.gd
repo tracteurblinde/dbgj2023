@@ -1,7 +1,7 @@
 @tool
 extends Node3D
 
-signal player_entered
+signal player_entered(node: Node3D)
 var has_player_entered := false
 
 enum Banner { DawnGuard = 0, AlphaFlight = 1, NightWatch = 2, Zeta = 3 }
@@ -19,12 +19,6 @@ func _ready():
 		$Banners.visible = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-	#set_banner(banner)
-
-
 func set_banner(value):
 	banner = value
 	$Banners/DawnguardBanner.visible = value == Banner.DawnGuard
@@ -37,4 +31,4 @@ func _on_area_3d_body_entered(_body: Node):
 	if not has_player_entered:
 		has_player_entered = true
 		$AnimationPlayer.play("raise_flag")
-		emit_signal("player_entered")
+		emit_signal("player_entered", self)
