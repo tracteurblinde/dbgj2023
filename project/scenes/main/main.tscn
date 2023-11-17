@@ -345,7 +345,7 @@ libraries = {
 script = ExtResource("2_2x67g")
 
 [node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0528371, 5.25499, 10.8808)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 34.0397, 130.288, -180.486)
 
 [node name="Level" type="Node3D" parent="Game"]
 
@@ -537,15 +537,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2441, 116.789, -173.964)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1334, 13.4906, -6.46146)
 banner = 2
 
+[node name="night_platform" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-0.819556, 0, 3.91514, 0, 4, 0, -3.91514, 0, -0.819556, -12.2621, 0.786125, -24.0178)
+
+[node name="night_platform2" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.91514, 0, -0.819556, 0, 4, 0, 0.819556, 0, -3.91514, -23.7906, -7.5061, -26.0615)
+
+[node name="night_platform3" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -37.2542, -13.6036, -26.0615)
+
+[node name="night_platform4" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -50.2854, -20.4222, -36.5167)
+
+[node name="night_platform5" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -44.8305, -17.5433, -51.9723)
+
+[node name="night_platform6" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -37.2542, -11.3307, -61.6699)
+
+[node name="night_platform7" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -28.7688, -4.05751, -75.1557)
+
+[node name="night_platform8" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -22.5563, -9.36089, -88.4899)
+
+[node name="night_platform9" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -35.4359, -12.9975, -96.9753)
+
+[node name="night_platform10" parent="Game/Level/nightwatch" instance=ExtResource("20_jgs1a")]
+transform = Transform3D(-3.72438, 0, 1.45912, 0, 4, 0, -1.45912, 0, -3.72438, -48.164, -5.72429, -104.097)
+
 [node name="zeta" type="Node3D" parent="Game/Level"]
 
 [node name="start" parent="Game/Level/zeta" instance=ExtResource("15_1gyo8")]
 transform = Transform3D(0.26256, 0, 0.964916, 0, 1, 0, -0.964916, 0, 0.26256, -10.9829, 119.833, -280.149)
 banner = 3
-
-[node name="night_platform" parent="." instance=ExtResource("20_jgs1a")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.8077, 5.15546, 2.26746)
-visible = false
 
 [node name="zeta_platform" parent="." instance=ExtResource("21_xehrc")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.8077, -0.450899, -7.71416)
