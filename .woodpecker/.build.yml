@@ -28,8 +28,13 @@ steps:
       - ls -la ./code
       - ls -la ./website
       - rm -r ./website/* || true
+      - mkdir ./website_tmp || true
       - cd code/project
-      - godot -v --headless --export-release "Web" ../../website/index.html
+      - godot -v --headless --export-release "Web" ../../website_tmp/index.html || true
+      - godot -v --headless --export-release "Web" ../../website_tmp/index.html || true
+      - godot -v --headless --export-release "Web" ../../website_tmp/index.html || true
+      - godot -v --headless --export-release "Web" ../../website_tmp/index.html || true
+      - godot -v --headless --export-release "Web" ../../website/index.html || true
       - ls -lta ../../website
   publish:
     image: woodpeckerci/plugin-git
