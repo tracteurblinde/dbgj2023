@@ -449,7 +449,7 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="Game/Level"]
-transform = Transform3D(-0.304033, 0.225627, -0.925557, -7.45058e-09, 0.971549, 0.236838, 0.952661, 0.0720066, -0.295383, -112.039, 147.438, -306.227)
+transform = Transform3D(-0.304033, 0.225627, -0.925557, -2.98023e-08, 0.971549, 0.236838, 0.952661, 0.0720067, -0.295383, -112.039, 147.438, -306.227)
 environment = ExtResource("2_jehhd")
 current = true
 
