@@ -13,6 +13,9 @@ const INTRO := "camera_intro2"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	$Level/AnimationPlayer.play(INTRO, 0, false)
+	$Level/AnimationPlayer.advance(0)
+	$Level/AnimationPlayer.stop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,6 +74,7 @@ func _on_dialogic_signal(argument: String):
 	elif argument == "omega_complete":
 		ThePlayer.active = true
 
+
 func reset_player():
 	ThePlayer.global_transform.origin = last_checkpoint.global_transform.origin
 	#ThePlayer.global_transform.basis = last_checkpoint.global_transform.basis
@@ -87,18 +91,21 @@ func _on_checkpoint(checkpoint: Node3D):
 	last_checkpoint = checkpoint
 
 
-func _on_alphaflight(_node:Node3D):
+func _on_alphaflight(_node: Node3D):
 	Dialogic.start("alphaflight")
 	ThePlayer.active = false
 
-func _on_nightwatch(_node:Node3D):
+
+func _on_nightwatch(_node: Node3D):
 	Dialogic.start("nightwatch")
 	ThePlayer.active = false
 
-func _on_zeta(_node:Node3D):
+
+func _on_zeta(_node: Node3D):
 	Dialogic.start("zeta")
 	ThePlayer.active = false
 
-func _on_omega(_node:Node3D):
+
+func _on_omega(_node: Node3D):
 	Dialogic.start("omega")
 	ThePlayer.active = false

@@ -346,6 +346,7 @@ mouse_filter = 2
 script = ExtResource("1_txuwy")
 
 [node name="Score" type="HBoxContainer" parent="UI"]
+visible = false
 layout_mode = 1
 offset_right = 174.0
 offset_bottom = 52.0
@@ -368,14 +369,12 @@ text = "/20"
 label_settings = ExtResource("5_tyg2n")
 
 [node name="Blackout" type="ColorRect" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1e-05, 1)
 color = Color(0, 0, 0, 1)
 
 [node name="SuperTitle" type="Label" parent="UI"]
@@ -397,8 +396,6 @@ text = "Desert Bus:"
 label_settings = SubResource("LabelSettings_r76lp")
 
 [node name="Title" type="Label" parent="UI"]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -406,9 +403,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -251.0
-offset_top = -46.0
+offset_top = 360.0
 offset_right = 251.0
-offset_bottom = 46.0003
+offset_bottom = 452.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Coffee Canyon"
