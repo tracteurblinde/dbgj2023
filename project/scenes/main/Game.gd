@@ -9,10 +9,14 @@ var intro_dialog_finished: bool = false
 var last_checkpoint: Node3D = null
 const INTRO := "camera_intro2"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.preload_timeline("dawnguard")
+	Dialogic.preload_timeline("alphaflight")
+	Dialogic.preload_timeline("nightwatch")
+	Dialogic.preload_timeline("zeta")
+	Dialogic.preload_timeline("omega")
 	$Level/AnimationPlayer.play(INTRO, 0, false)
 	$Level/AnimationPlayer.advance(0)
 	$Level/AnimationPlayer.stop()
