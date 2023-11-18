@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cabg8eend021q"
-path.bptc="res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.bptc.ctex"
-path.astc="res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.astc.ctex"
+path="res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://3pp/dbgj/dawnguard.png"
-dest_files=["res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.bptc.ctex", "res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.astc.ctex"]
+dest_files=["res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=0

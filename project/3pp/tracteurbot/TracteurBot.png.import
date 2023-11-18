@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx8tpn6fpcnna"
-path.bptc="res://.godot/imported/TracteurBot.png-025e0b873556fbacf6577d873a4b8faf.bptc.ctex"
-path.astc="res://.godot/imported/TracteurBot.png-025e0b873556fbacf6577d873a4b8faf.astc.ctex"
+path="res://.godot/imported/TracteurBot.png-025e0b873556fbacf6577d873a4b8faf.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://3pp/tracteurbot/TracteurBot.png"
-dest_files=["res://.godot/imported/TracteurBot.png-025e0b873556fbacf6577d873a4b8faf.bptc.ctex", "res://.godot/imported/TracteurBot.png-025e0b873556fbacf6577d873a4b8faf.astc.ctex"]
+dest_files=["res://.godot/imported/TracteurBot.png-025e0b873556fbacf6577d873a4b8faf.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

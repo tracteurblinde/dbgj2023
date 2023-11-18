@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gnnl5dtwe0dv"
-path.bptc="res://.godot/imported/alphaflight.png-64cbaa127860568c24dd844e8100eba6.bptc.ctex"
-path.astc="res://.godot/imported/alphaflight.png-64cbaa127860568c24dd844e8100eba6.astc.ctex"
+path="res://.godot/imported/alphaflight.png-64cbaa127860568c24dd844e8100eba6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://3pp/dbgj/alphaflight.png"
-dest_files=["res://.godot/imported/alphaflight.png-64cbaa127860568c24dd844e8100eba6.bptc.ctex", "res://.godot/imported/alphaflight.png-64cbaa127860568c24dd844e8100eba6.astc.ctex"]
+dest_files=["res://.godot/imported/alphaflight.png-64cbaa127860568c24dd844e8100eba6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=0

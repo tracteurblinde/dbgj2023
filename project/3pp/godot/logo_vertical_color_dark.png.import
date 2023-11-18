@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc0jjxwdtui05"
-path.bptc="res://.godot/imported/logo_vertical_color_dark.png-4720a4c9d70f731d68668290c7ea0f16.bptc.ctex"
-path.astc="res://.godot/imported/logo_vertical_color_dark.png-4720a4c9d70f731d68668290c7ea0f16.astc.ctex"
+path="res://.godot/imported/logo_vertical_color_dark.png-4720a4c9d70f731d68668290c7ea0f16.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://3pp/godot/logo_vertical_color_dark.png"
-dest_files=["res://.godot/imported/logo_vertical_color_dark.png-4720a4c9d70f731d68668290c7ea0f16.bptc.ctex", "res://.godot/imported/logo_vertical_color_dark.png-4720a4c9d70f731d68668290c7ea0f16.astc.ctex"]
+dest_files=["res://.godot/imported/logo_vertical_color_dark.png-4720a4c9d70f731d68668290c7ea0f16.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
