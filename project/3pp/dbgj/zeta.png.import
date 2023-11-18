@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu6h5m06s7tqa"
-path.s3tc="res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.s3tc.ctex"
-path.etc2="res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.etc2.ctex"
+path.bptc="res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.bptc.ctex"
+path.astc="res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,14 +13,14 @@ metadata={
 [deps]
 
 source_file="res://3pp/dbgj/zeta.png"
-dest_files=["res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.s3tc.ctex", "res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.etc2.ctex"]
+dest_files=["res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.bptc.ctex", "res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
-compress/hdr_compression=1
+compress/hdr_compression=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

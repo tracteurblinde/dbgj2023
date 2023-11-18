@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cabg8eend021q"
-path.bptc="res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.bptc.ctex"
-path.astc="res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.astc.ctex"
+uid="uid://c4p4uccynrg7t"
+path.bptc="res://.godot/imported/omega.png-6edc1eab166bf6b8c25fd219c05be644.bptc.ctex"
+path.astc="res://.godot/imported/omega.png-6edc1eab166bf6b8c25fd219c05be644.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://3pp/dbgj/dawnguard.png"
-dest_files=["res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.bptc.ctex", "res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed27.astc.ctex"]
+source_file="res://3pp/dbgj/omega.png"
+dest_files=["res://.godot/imported/omega.png-6edc1eab166bf6b8c25fd219c05be644.bptc.ctex", "res://.godot/imported/omega.png-6edc1eab166bf6b8c25fd219c05be644.astc.ctex"]
 
 [params]
 

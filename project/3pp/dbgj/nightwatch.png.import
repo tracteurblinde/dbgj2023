@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwhyy0w3rrekt"
-path.s3tc="res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.s3tc.ctex"
-path.etc2="res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.etc2.ctex"
+path.bptc="res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.bptc.ctex"
+path.astc="res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,14 +13,14 @@ metadata={
 [deps]
 
 source_file="res://3pp/dbgj/nightwatch.png"
-dest_files=["res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.s3tc.ctex", "res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.etc2.ctex"]
+dest_files=["res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.bptc.ctex", "res://.godot/imported/nightwatch.png-ada10aba6b821eb28d5874d44bda47ac.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
-compress/hdr_compression=1
+compress/hdr_compression=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

@@ -4,9 +4,9 @@ extends Node3D
 signal player_entered(node: Node3D)
 var has_player_entered := false
 
-enum Banner { DawnGuard = 0, AlphaFlight = 1, NightWatch = 2, Zeta = 3 }
+enum Banner { DawnGuard = 0, AlphaFlight = 1, NightWatch = 2, Zeta = 3, Omega = 4 }
 
-@export var banner: Banner = Banner.DawnGuard:
+@export var banner: Banner = Banner.Omega:
 	set = set_banner
 
 
@@ -29,6 +29,7 @@ func set_banner(value):
 	$Banners/AlphaflightBanner.visible = value == Banner.AlphaFlight
 	$Banners/NightwatchBanner.visible = value == Banner.NightWatch
 	$Banners/ZetaFlag.visible = value == Banner.Zeta
+	$Banners/OmegaBanner.visible = value == Banner.Omega
 
 
 func _on_area_3d_body_entered(_body: Node):

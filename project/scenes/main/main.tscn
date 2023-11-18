@@ -348,7 +348,7 @@ libraries = {
 script = ExtResource("2_2x67g")
 
 [node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -10.835, 119.747, -280.267)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0775293, 5.27588, 11.0683)
 
 [node name="Level" type="Node3D" parent="Game"]
 
@@ -425,6 +425,7 @@ transform = Transform3D(21.9866, 0, 76.9193, -11.5221, 79.0974, 3.29347, -76.051
 
 [node name="start" parent="Game/Level/dawnguard" instance=ExtResource("15_1gyo8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0986164, 5.31427, 11.1227)
+banner = 0
 
 [node name="dawn_platform" parent="Game/Level/dawnguard" instance=ExtResource("19_p00vd")]
 transform = Transform3D(-1.73759, 0, -3.60288, 0, 4, 0, 3.60288, 0, -1.73759, -3.10008, 5.89502, -2.46192)
@@ -619,9 +620,6 @@ reverse = true
 [node name="zeta_platform" parent="Game/Level/zeta" instance=ExtResource("21_xehrc")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -43.9676, 133.286, -347.046)
 
-[node name="zeta_platform3" parent="Game/Level/zeta" instance=ExtResource("21_xehrc")]
-transform = Transform3D(0.527849, 0, 3.96502, 0, 4, 0, -3.96502, 0, 0.527849, -117.959, 154.162, -275.673)
-
 [node name="zeta_platform2" parent="Game/Level/zeta" instance=ExtResource("21_xehrc")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -44.0997, 131.244, -268.547)
 
@@ -634,6 +632,9 @@ transform = Transform3D(0.801181, 0, 0.598423, 0, 1, 0, -0.598423, 0, 0.801181, 
 [node name="ZetaTriforceVertical2" parent="Game/Level/zeta" instance=ExtResource("17_lu5hh")]
 transform = Transform3D(0.485527, 0, 0.874222, 0, 1, 0, -0.874222, 0, 0.485527, -112.904, 142.021, -291.761)
 reverse = true
+
+[node name="starting_platform" parent="Game/Level/zeta" instance=ExtResource("15_1gyo8")]
+transform = Transform3D(-0.949666, 0, -0.313263, 0, 1, 0, 0.313263, 0, -0.949666, -118.096, 154.822, -276.291)
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
