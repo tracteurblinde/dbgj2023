@@ -56,6 +56,9 @@ script = ExtResource("1_suvkd")
 [node name="starting_platform" parent="." instance=ExtResource("1_ay4up")]
 transform = Transform3D(0.12969, 0, 3.9979, 0, 4, 0, -3.9979, 0, 0.12969, 0.133115, -0.666461, -1.29583)
 
+[node name="rockFlat" parent="starting_platform" index="0"]
+layers = 5
+
 [node name="space_rocks_small_a" parent="." instance=ExtResource("2_epaj0")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.39855, -0.110644, -2.58635)
 
@@ -102,5 +105,6 @@ libraries = {
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
+[editable path="starting_platform"]
 [editable path="space_rocks_small_a"]
 [editable path="space_rock_large_a"]

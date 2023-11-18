@@ -636,6 +636,30 @@ reverse = true
 [node name="starting_platform" parent="Game/Level/zeta" instance=ExtResource("15_1gyo8")]
 transform = Transform3D(-0.949666, 0, -0.313263, 0, 1, 0, 0.313263, 0, -0.949666, -118.096, 154.822, -276.291)
 
+[node name="OmniLight3D3" type="OmniLight3D" parent="Game/Level/zeta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4687, 108.155, -275.531)
+layers = 4
+light_bake_mode = 1
+light_cull_mask = 4293918724
+omni_range = 34.3422
+omni_attenuation = 0.0877999
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Game/Level/zeta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5074, 101.728, -352.537)
+layers = 4
+light_bake_mode = 1
+light_cull_mask = 4293918724
+omni_range = 42.1709
+omni_attenuation = 0.0877999
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Game/Level/zeta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.87, 119.602, -313.922)
+layers = 4
+light_bake_mode = 1
+light_cull_mask = 4293918724
+omni_range = 62.5981
+omni_attenuation = 0.0877999
+
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Game/Level/AnimationPlayer" to="Game" method="_on_animation_player_animation_finished"]
