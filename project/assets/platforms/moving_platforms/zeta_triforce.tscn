@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwen4ny13bmar"]
+
+[ext_resource type="Script" path="res://assets/platforms/moving_platforms/zeta_triforce.gd" id="1_23p88"]
+[ext_resource type="PackedScene" uid="uid://rdm45e6j2iiw" path="res://assets/platforms/platform_zeta.tscn" id="1_qqxq0"]
+
+[sub_resource type="Animation" id="Animation_s5s8x"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_t543e"]
+resource_name = "spin"
+length = 9.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_1cvku"]
+resource_name = "spin_2"
+length = 9.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_yrg4o"]
+resource_name = "spin_3"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2v8i"]
+_data = {
+"RESET": SubResource("Animation_s5s8x"),
+"spin": SubResource("Animation_t543e"),
+"spin_2": SubResource("Animation_1cvku"),
+"spin_3": SubResource("Animation_yrg4o")
+}
+
+[node name="ZetaTriforce" type="Node3D"]
+script = ExtResource("1_23p88")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_k2v8i")
+}
+
+[node name="pivot" type="Node3D" parent="."]
+transform = Transform3D(0.465615, 0, -0.884987, 0, 1, 0, 0.884987, 0, 0.465615, 0, 0, 0)
+
+[node name="zeta_platform" parent="pivot" instance=ExtResource("1_qqxq0")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -8)
+
+[node name="zeta_platform2" parent="pivot" instance=ExtResource("1_qqxq0")]
+transform = Transform3D(-2, 0, -3.4641, 0, 4, 0, 3.4641, 0, -2, 6.9282, 0, 4)
+
+[node name="zeta_platform3" parent="pivot" instance=ExtResource("1_qqxq0")]
+transform = Transform3D(-2, 0, 3.4641, 0, 4, 0, -3.4641, 0, -2, -6.9282, 0, 4)

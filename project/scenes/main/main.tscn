@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=28 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -9,7 +9,10 @@
 [ext_resource type="FontFile" uid="uid://b5bfhdfq7k3nn" path="res://3pp/IBMPlex/IBMPlexSans-Italic.ttf" id="3_yig4o"]
 [ext_resource type="PackedScene" uid="uid://dp6ojvfxx7tyw" path="res://assets/boundary_flat.tscn" id="9_wygfu"]
 [ext_resource type="PackedScene" uid="uid://cmovmeg7hc85a" path="res://scenes/Player/Player.tscn" id="10_mrrum"]
+[ext_resource type="PackedScene" uid="uid://dwen4ny13bmar" path="res://assets/platforms/moving_platforms/zeta_triforce.tscn" id="14_h06ib"]
 [ext_resource type="PackedScene" uid="uid://cxuwbthrdnvat" path="res://scenes/main/starting_platform.tscn" id="15_1gyo8"]
+[ext_resource type="PackedScene" uid="uid://b6srj2cqyxvwr" path="res://assets/platforms/moving_platforms/sliding_platform.tscn" id="16_gfmgu"]
+[ext_resource type="PackedScene" uid="uid://nwg1frwhf5gi" path="res://assets/platforms/moving_platforms/zeta_triforce_vertical.tscn" id="17_lu5hh"]
 [ext_resource type="PackedScene" uid="uid://dh2qq42hh6kuo" path="res://assets/platforms/platform_alpha.tscn" id="18_jdsnp"]
 [ext_resource type="PackedScene" uid="uid://c6uuk2axxlm4c" path="res://assets/platforms/platform_dawn.tscn" id="19_p00vd"]
 [ext_resource type="PackedScene" uid="uid://xv4x7jkb0utn" path="res://assets/platforms/platform_night.tscn" id="20_jgs1a"]
@@ -345,7 +348,7 @@ libraries = {
 script = ExtResource("2_2x67g")
 
 [node name="Player" parent="Game" instance=ExtResource("10_mrrum")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 34.0397, 130.288, -180.486)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -10.835, 119.747, -280.267)
 
 [node name="Level" type="Node3D" parent="Game"]
 
@@ -402,7 +405,19 @@ transform = Transform3D(-79.4775, 1.43581, -9.01461, 0.399832, 79.4759, 9.13358,
 transform = Transform3D(41.3996, -1.69557, -68.4339, 1.56242, 79.978, -1.03641, 68.437, -0.800182, 41.4214, 11.4999, 52.0405, -206.357)
 
 [node name="BoundaryFlat7" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
-transform = Transform3D(64.9764, 0, -46.6697, 0, 80, 0, 46.6697, 0, 64.9764, -29.7435, 59.7576, -258.99)
+transform = Transform3D(33.7114, 15.2282, -70.934, -23.218, 76.3688, 5.36057, 68.7347, 18.3279, 36.6008, -14.818, 73.5864, -243.956)
+
+[node name="BoundaryFlat10" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
+transform = Transform3D(-74.9702, -24.8473, -12.7307, -25.8713, 75.5415, 4.91577, 10.4944, 8.72372, -78.8274, 14.1611, 65.0687, -206.495)
+
+[node name="BoundaryFlat8" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
+transform = Transform3D(64.9764, 0, -46.6697, 0, 80, 0, 46.6697, 0, 64.9764, -32.0563, 87.652, -307.881)
+
+[node name="BoundaryFlat9" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
+transform = Transform3D(21.9866, 0, 76.9193, 0, 80, 0, -76.9193, 0, 21.9866, -88.1853, 96.5849, -317.399)
+
+[node name="BoundaryFlat11" parent="Game/Level/bottom" instance=ExtResource("9_wygfu")]
+transform = Transform3D(21.9866, 0, 76.9193, -11.5221, 79.0974, 3.29347, -76.0514, -11.9835, 21.7385, -88.1853, 104.334, -287.151)
 
 [node name="walls" type="Node3D" parent="Game/Level"]
 
@@ -591,9 +606,34 @@ transform = Transform3D(-3.45126, 0, 2.02209, 0, 4, 0, -2.02209, 0, -3.45126, -4
 transform = Transform3D(0.26256, 0, 0.964916, 0, 1, 0, -0.964916, 0, 0.26256, -10.9829, 119.833, -280.149)
 banner = 3
 
-[node name="zeta_platform" parent="." instance=ExtResource("21_xehrc")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.8077, -0.450899, -7.71416)
-visible = false
+[node name="ZetaTriforce" parent="Game/Level/zeta" instance=ExtResource("14_h06ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0094, 120.855, -283.492)
+
+[node name="ZetaTriforce2" parent="Game/Level/zeta" instance=ExtResource("14_h06ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.7963, 125.722, -330.755)
+
+[node name="ZetaTriforce3" parent="Game/Level/zeta" instance=ExtResource("14_h06ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.9054, 125.722, -331.609)
+reverse = true
+
+[node name="zeta_platform" parent="Game/Level/zeta" instance=ExtResource("21_xehrc")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -43.9676, 133.286, -347.046)
+
+[node name="zeta_platform3" parent="Game/Level/zeta" instance=ExtResource("21_xehrc")]
+transform = Transform3D(0.527849, 0, 3.96502, 0, 4, 0, -3.96502, 0, 0.527849, -117.959, 154.162, -275.673)
+
+[node name="zeta_platform2" parent="Game/Level/zeta" instance=ExtResource("21_xehrc")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -44.0997, 131.244, -268.547)
+
+[node name="SlidingPlatform" parent="Game/Level/zeta" instance=ExtResource("16_gfmgu")]
+transform = Transform3D(-0.591324, 0, 0.806434, 0, 1, 0, -0.806434, 0, -0.591324, -18.1653, 121.156, -302.127)
+
+[node name="ZetaTriforceVertical" parent="Game/Level/zeta" instance=ExtResource("17_lu5hh")]
+transform = Transform3D(0.801181, 0, 0.598423, 0, 1, 0, -0.598423, 0, 0.801181, -99.4453, 129.869, -313.522)
+
+[node name="ZetaTriforceVertical2" parent="Game/Level/zeta" instance=ExtResource("17_lu5hh")]
+transform = Transform3D(0.485527, 0, 0.874222, 0, 1, 0, -0.874222, 0, 0.485527, -112.904, 142.021, -291.761)
+reverse = true
 
 [connection signal="intro_finished" from="UI" to="Game" method="_on_ui_intro_finished"]
 [connection signal="animation_finished" from="UI/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
@@ -605,6 +645,10 @@ visible = false
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat5" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat6" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat7" to="Game" method="_on_boundary_flat_hit"]
+[connection signal="hit" from="Game/Level/bottom/BoundaryFlat10" to="Game" method="_on_boundary_flat_hit"]
+[connection signal="hit" from="Game/Level/bottom/BoundaryFlat8" to="Game" method="_on_boundary_flat_hit"]
+[connection signal="hit" from="Game/Level/bottom/BoundaryFlat9" to="Game" method="_on_boundary_flat_hit"]
+[connection signal="hit" from="Game/Level/bottom/BoundaryFlat11" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="player_entered" from="Game/Level/dawnguard/start" to="Game" method="_on_checkpoint"]
 [connection signal="player_entered" from="Game/Level/alphaflight/start" to="Game" method="_on_checkpoint"]
 [connection signal="player_entered" from="Game/Level/nightwatch/start" to="Game" method="_on_checkpoint"]

@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://nwg1frwhf5gi"]
+
+[ext_resource type="Script" path="res://assets/platforms/moving_platforms/zeta_triforce.gd" id="1_rv885"]
+[ext_resource type="PackedScene" uid="uid://rdm45e6j2iiw" path="res://assets/platforms/platform_zeta.tscn" id="2_humkp"]
+
+[sub_resource type="Animation" id="Animation_s5s8x"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_t543e"]
+resource_name = "spin"
+length = 9.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_1cvku"]
+resource_name = "spin_2"
+length = 9.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_yrg4o"]
+resource_name = "spin_3"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -6.28319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/zeta_platform:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/zeta_platform2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pivot/zeta_platform3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.0842e-19, -4.46638e-06, -2.38419e-07), Vector3(0, 0, 6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2v8i"]
+_data = {
+"RESET": SubResource("Animation_s5s8x"),
+"spin": SubResource("Animation_t543e"),
+"spin_2": SubResource("Animation_1cvku"),
+"spin_3": SubResource("Animation_yrg4o")
+}
+
+[node name="ZetaTriforceVertical" type="Node3D"]
+script = ExtResource("1_rv885")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_k2v8i")
+}
+
+[node name="pivot" type="Node3D" parent="."]
+transform = Transform3D(0.394744, -0.918791, 0, 0.918791, 0.394744, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="zeta_platform" parent="pivot" instance=ExtResource("2_humkp")]
+transform = Transform3D(1.57889, 3.67496, 0, -3.67496, 1.57889, 0, 0, 0, 4, -8, 0, 0)
+
+[node name="zeta_platform2" parent="pivot" instance=ExtResource("2_humkp")]
+transform = Transform3D(1.57889, 3.67496, 0, -3.67496, 1.57889, 0, 0, 0, 4, 4, -6.9282, 1.78655e-05)
+
+[node name="zeta_platform3" parent="pivot" instance=ExtResource("2_humkp")]
+transform = Transform3D(1.57888, 3.67495, -3.31256e-06, -3.67495, 1.57888, -8.04117e-20, 1.30754e-06, 3.04338e-06, 4, 4, 6.9282, 1.78655e-05)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6srj2cqyxvwr"]
+
+[ext_resource type="Script" path="res://assets/platforms/moving_platforms/sliding_platform.gd" id="1_f87ok"]
+[ext_resource type="PackedScene" uid="uid://rdm45e6j2iiw" path="res://assets/platforms/platform_zeta.tscn" id="1_nkgey"]
+
+[sub_resource type="Animation" id="Animation_u72qf"]
+resource_name = "slide"
+length = 8.0
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moving")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 8, 1, 36, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10swl"]
+_data = {
+"slide": SubResource("Animation_u72qf")
+}
+
+[node name="SlidingPlatform" type="Node3D"]
+script = ExtResource("1_f87ok")
+
+[node name="start" parent="." instance=ExtResource("1_nkgey")]
+
+[node name="end" parent="." instance=ExtResource("1_nkgey")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 36, 0, 0)
+
+[node name="moving" parent="." instance=ExtResource("1_nkgey")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 30.1363, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_10swl")
+}
