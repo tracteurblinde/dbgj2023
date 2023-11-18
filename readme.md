@@ -6,6 +6,8 @@ This is the repository an entry in the [Desert Bus For Hope 2023 Game Jam](https
 
 **Theme:** Coffee Quest
 
+This is a simple platformer where you help the Caff-ordinator collect all the coffee they've spilled in Coffee Canyon and deliver it to the Omega Shift.
+
 Latest version is hosted at https://demo.tracteur.dev/dbgj2023/
 
 ## Credits
