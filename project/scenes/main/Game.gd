@@ -7,6 +7,7 @@ var intro_dialog_finished: bool = false
 @onready var ThePlayer := $Player
 
 var last_checkpoint: Node3D = null
+const INTRO := "camera_intro2"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,7 +32,7 @@ func _on_ui_intro_finished():
 	# TODO: Move into level script
 
 	# Set the last position/rotation in the camera_intro animation to the position of the character camera
-	var animation: Animation = $Level/AnimationPlayer.get_animation("camera_intro")
+	var animation: Animation = $Level/AnimationPlayer.get_animation(INTRO)
 	assert(animation != null)
 	assert(animation.get_track_count() == 2)
 	assert(animation.track_get_type(0) == Animation.TYPE_POSITION_3D)
@@ -47,12 +48,12 @@ func _on_ui_intro_finished():
 	animation.track_set_key_value(1, rotation_key_count - 1, game_cam_rotation)
 	#animation.track_set_key_value(1, rotation_key_count - 2, game_cam_rotation)
 
-	$Level/AnimationPlayer.play("camera_intro")
+	$Level/AnimationPlayer.play(INTRO)
 	Dialogic.start("dawnguard")
 
 
 func _on_animation_player_animation_finished(anim_name: StringName):
-	if anim_name == "camera_intro":
+	if anim_name == INTRO:
 		intro_cam_finished = true
 		transition_to_gamecam()
 

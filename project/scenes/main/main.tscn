@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bh5tolofd0bng"]
+[gd_scene load_steps=34 format=3 uid="uid://bh5tolofd0bng"]
 
 [ext_resource type="Script" path="res://scenes/main/UI.gd" id="1_txuwy"]
 [ext_resource type="Script" path="res://scenes/main/Game.gd" id="2_2x67g"]
@@ -309,9 +309,28 @@ tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, -0.275184, 0, 0, 0.961391, 1, 1, 0.0400706, 0, 0, 0.999197, 2, 1, -0.259198, 0, 0, 0.965824, 3, 1, -0.707107, 0, 0, 0.707107)
 
+[sub_resource type="Animation" id="Animation_yds7d"]
+resource_name = "camera_intro2"
+length = 21.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level/Camera3D")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -112.039, 147.438, -306.227, 4, 1, -29.3128, 126.761, -299.743, 8, 1, 16.1666, 126.761, -180.784, 8.5, 1, 16.1666, 126.761, -169.478, 12, 1, -7.03696, 69.3304, -92.8891, 16, 1, -25.743, 16.3404, -0.898468, 20, 1, -1.33453, 12.4466, 21.0395, 21, 1, -1.33453, 12.4466, 21.0395)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Level/Camera3D")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.0703578, -0.801711, -0.096308, 0.58569, 4, 1, 0.0237861, 0.975915, 0.165064, -0.140632, 8, 1, 0.000710207, 0.985987, 0.166767, -0.00419899, 8.5, 1, 8.97071e-05, 0.951086, 0.308898, -0.00425768, 12, 1, 0.0371322, 0.943712, 0.306658, -0.118281, 16, 1, 0, -0.804619, 0, 0.593791, 20, 1, 0, -0.0192674, 0, 0.999814, 21, 1, 0, -0.0192674, 0, 0.999814)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ljcyj"]
 _data = {
-"camera_intro": SubResource("Animation_3wv71")
+"camera_intro": SubResource("Animation_3wv71"),
+"camera_intro2": SubResource("Animation_yds7d")
 }
 
 [node name="Main" type="Node3D"]
@@ -430,7 +449,7 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="Game/Level"]
-transform = Transform3D(1, 0, 0, 0, 0.848547, 0.529119, 0, -0.529119, 0.848547, 0, 6.82948, 10.1091)
+transform = Transform3D(-0.304033, 0.225627, -0.925557, -7.45058e-09, 0.971549, 0.236838, 0.952661, 0.0720066, -0.295383, -112.039, 147.438, -306.227)
 environment = ExtResource("2_jehhd")
 current = true
 
