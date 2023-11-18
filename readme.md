@@ -10,6 +10,10 @@ This is a simple platformer where you help the Caff-ordinator collect all the co
 
 Latest version is hosted at https://demo.tracteur.dev/dbgj2023/
 
+Source Code is hosted at https://github.com/tracteurblinde/dbgj2023
+
+Itch.io page is hosted at https://tracteurblinde.itch.io/desert-bus-coffee-canyon
+
 ## Credits
 Concept, design and code - Tracteur Blindé
 
