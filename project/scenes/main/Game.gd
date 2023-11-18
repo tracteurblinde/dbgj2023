@@ -46,7 +46,7 @@ func _on_ui_intro_finished():
 	#animation.track_set_key_value(1, rotation_key_count - 2, game_cam_rotation)
 
 	$Level/AnimationPlayer.play("camera_intro")
-	Dialogic.start("test")
+	Dialogic.start("dawnguard")
 
 
 func _on_animation_player_animation_finished(anim_name: StringName):
@@ -56,9 +56,17 @@ func _on_animation_player_animation_finished(anim_name: StringName):
 
 
 func _on_dialogic_signal(argument: String):
-	if argument == "intro_complete":
+	if argument == "dawnguard_complete":
 		intro_dialog_finished = true
 		transition_to_gamecam()
+	elif argument == "alphaflight_complete":
+		$Player.active = true
+	elif argument == "nightwatch_complete":
+		$Player.active = true
+	elif argument == "zeta_complete":
+		$Player.active = true
+	elif argument == "omega_complete":
+		$Player.active = true
 
 
 func _on_boundary_flat_hit(_flat: Node):
@@ -67,9 +75,27 @@ func _on_boundary_flat_hit(_flat: Node):
 		#$Player.global_transform.basis = last_checkpoint.global_transform.basis
 		$Player.reset()
 		$Player.active = true
+		print("Reset to last checkpoint")
 	else:
 		print("No last checkpoint")
 
 
 func _on_checkpoint(checkpoint: Node3D):
 	last_checkpoint = checkpoint
+
+
+func _on_alphaflight(_node:Node3D):
+	Dialogic.start("alphaflight")
+	$Player.active = false
+
+func _on_nightwatch(_node:Node3D):
+	Dialogic.start("nightwatch")
+	$Player.active = false
+
+func _on_zeta(_node:Node3D):
+	Dialogic.start("zeta")
+	$Player.active = false
+
+func _on_omega(_node:Node3D):
+	Dialogic.start("omega")
+	$Player.active = false

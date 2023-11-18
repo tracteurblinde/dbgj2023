@@ -21,7 +21,7 @@ specular_mode = 1
 albedo_color = Color(0.278431, 0.32549, 0.0470588, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rpohp"]
-size = Vector3(5.08911, 4.10925, 5.47191)
+size = Vector3(3.34674, 1.54113, 4.49688)
 
 [sub_resource type="Animation" id="Animation_sq5um"]
 resource_name = "raise_flag"
@@ -88,14 +88,13 @@ visible = false
 visible = false
 
 [node name="OmegaBanner" parent="Banners" instance=ExtResource("9_pf2n2")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402832, 1.85707, -1.10935)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243256, 0.272158, -1.3656)
 shape = SubResource("BoxShape3D_rpohp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

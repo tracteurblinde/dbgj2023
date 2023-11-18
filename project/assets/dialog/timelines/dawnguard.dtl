@@ -1,0 +1,9 @@
+join kaffordinator 1
+kaffordinator: Hello, Viewer! Welcome to Coffee Canyon!
+kaffordinator: I'm the Desert bus Kaff-Ordinator!\
+I'm responsible for coordinating the caffiene supplied to the crew during the run.
+kaffordinator: Unfortunately, I dropped the crew's coffee among the canyon rocks.\
+Will you help me collect their delivery?
+kaffordinator: Right Click to lock your cursor to the Window.\
+Use WASD and the mouse to move and Space to jump
+[signal arg="dawnguard_complete"]

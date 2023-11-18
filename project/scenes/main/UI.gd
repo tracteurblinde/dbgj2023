@@ -3,17 +3,18 @@ extends Control
 signal intro_finished
 signal anykey_pressed
 
-var has_pressed_anykey: bool = false
+var has_pressed_anykey := false
+var has_fade_in_completed := false
 
 
 func _input(event):
-	if event is InputEventKey:
+	if has_fade_in_completed and event is InputEventKey:
 		if event.pressed:
 			_on_anykey_pressed()
 
 
 func _unhandled_input(event):
-	if event is InputEventKey:
+	if has_fade_in_completed and event is InputEventKey:
 		if event.pressed:
 			_on_anykey_pressed()
 
@@ -38,5 +39,7 @@ func _process(_delta):
 
 
 func _on_animation_player_animation_finished(anim_name: StringName):
-	if anim_name == "fade_intro":
+	if anim_name == "intro":
+		has_fade_in_completed = true
+	elif anim_name == "fade_intro":
 		emit_signal("intro_finished")

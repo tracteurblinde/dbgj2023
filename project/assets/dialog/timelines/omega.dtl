@@ -1,0 +1,6 @@
+kaffordinator: You made it to Omega!\
+Thank you for helping me collect the coffee.
+join tracteur 3
+tracteur (main): Thanks for Playing!
+leave tracteur
+[signal arg="omega_complete"]

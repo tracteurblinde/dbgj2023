@@ -1,0 +1,3 @@
+kaffordinator: You're doing great!\
+Proceed through the Nightwatch area and keep collecting their coffee.
+[signal arg="nightwatch_complete"]

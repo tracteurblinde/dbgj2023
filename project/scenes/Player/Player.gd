@@ -55,10 +55,12 @@ func is_dashing():
 
 
 func _physics_process(delta):
-	if not active:
-		return
-
 	var on_floor := is_on_floor()
+	var just_landed := false
+	var is_jumping := false
+	var dashing := false
+	var move_direction := Vector3.ZERO
+
 	if on_floor == floor_state_shadow:
 		time_at_floor_state += delta
 	else:
@@ -70,81 +72,83 @@ func _physics_process(delta):
 	elif on_floor != floor_state_shadow:
 		floor_state_shadow = on_floor
 
-	var dashing := false
-	if enable_dash:
-		if Input.is_action_just_pressed("move_forward"):
-			if not looking_for_combo:
-				looking_for_combo = true
-				last_w_delta = 0.0
-			else:
-				looking_for_combo = false
-				if last_w_delta < combo_timeout:
-					print("Dash")
-					animator.set(
-						"parameters/roll_oneshot/request",
-						AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
-					)
-					dash_remaining = dash_length
-					looking_for_combo = false
+	if active:
+		if enable_dash:
+			if Input.is_action_just_pressed("move_forward"):
+				if not looking_for_combo:
+					looking_for_combo = true
 					last_w_delta = 0.0
 				else:
-					last_w_delta = 0.0
-					looking_for_combo = true
+					looking_for_combo = false
+					if last_w_delta < combo_timeout:
+						print("Dash")
+						animator.set(
+							"parameters/roll_oneshot/request",
+							AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+						)
+						dash_remaining = dash_length
+						looking_for_combo = false
+						last_w_delta = 0.0
+					else:
+						last_w_delta = 0.0
+						looking_for_combo = true
 
-		if looking_for_combo:
-			last_w_delta += delta
+			if looking_for_combo:
+				last_w_delta += delta
 
-		if dash_remaining > 0.0:
-			dashing = true
-			dash_remaining -= delta
-		else:
-			dash_remaining = 0.0
+			if dash_remaining > 0.0:
+				dashing = true
+				dash_remaining -= delta
+			else:
+				dash_remaining = 0.0
 
-	var move_direction: Vector3 = Vector3.ZERO
-	move_direction.x = (
-		Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
-	)
-	move_direction.z = (
-		Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
-	)
-	move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
+		move_direction.x = (
+			Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
+		)
+		move_direction.z = (
+			Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
+		)
+		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
+
+		just_landed = is_on_floor() and snap_vector == Vector3.ZERO
+		if num_jumps == 0 and on_floor:
+			is_jumping = Input.is_action_just_pressed("move_jump")
+		elif enable_double_jump:
+			is_jumping = Input.is_action_just_pressed("move_jump") and num_jumps < max_jumps
 
 	velocity.y -= gravity * delta
 
-	if dashing:
-		speed = run_speed * dash_strength
-	elif Input.is_action_pressed("move_walk"):
-		speed = walk_speed
-	else:
-		speed = run_speed
+	if active:
+		if dashing:
+			speed = run_speed * dash_strength
+		elif Input.is_action_pressed("move_walk"):
+			speed = walk_speed
+		else:
+			speed = run_speed
 
-	velocity.x = move_direction.x * speed
-	velocity.z = move_direction.z * speed
+		velocity.x = move_direction.x * speed
+		velocity.z = move_direction.z * speed
 
-	if move_direction:
-		player_mesh.rotation.y = lerp_angle(
-			player_mesh.rotation.y, atan2(-velocity.x, -velocity.z), LERP_VALUE
-		)
-
-	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
-	var is_jumping := false
-	if num_jumps == 0 and on_floor:
-		is_jumping = Input.is_action_just_pressed("move_jump")
-	elif enable_double_jump:
-		is_jumping = Input.is_action_just_pressed("move_jump") and num_jumps < max_jumps
-
-	if is_jumping:
-		velocity.y = jump_strength
-		snap_vector = Vector3.ZERO
-		if num_jumps > 0:
-			animator.set(
-				"parameters/flip_oneshot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+		if move_direction:
+			player_mesh.rotation.y = lerp_angle(
+				player_mesh.rotation.y, atan2(-velocity.x, -velocity.z), LERP_VALUE
 			)
-		num_jumps += 1
 
-	elif just_landed:
-		snap_vector = Vector3.DOWN
-		num_jumps = 0
+		if is_jumping:
+			velocity.y = jump_strength
+			snap_vector = Vector3.ZERO
+			if num_jumps > 0:
+				animator.set(
+					"parameters/flip_oneshot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+				)
+			num_jumps += 1
+
+		elif just_landed:
+			snap_vector = Vector3.DOWN
+			num_jumps = 0
+	else:
+		velocity.x = 0
+		velocity.z = 0
 
 	apply_floor_snap()
 	move_and_slide()

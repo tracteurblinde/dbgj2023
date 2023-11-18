@@ -607,6 +607,9 @@ transform = Transform3D(-3.45126, 0, 2.02209, 0, 4, 0, -2.02209, 0, -3.45126, -4
 transform = Transform3D(0.26256, 0, 0.964916, 0, 1, 0, -0.964916, 0, 0.26256, -10.9829, 119.833, -280.149)
 banner = 3
 
+[node name="omega" parent="Game/Level/zeta" instance=ExtResource("15_1gyo8")]
+transform = Transform3D(-0.949666, 0, -0.313263, 0, 1, 0, 0.313263, 0, -0.949666, -118.096, 154.822, -276.291)
+
 [node name="ZetaTriforce" parent="Game/Level/zeta" instance=ExtResource("14_h06ib")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0094, 120.855, -283.492)
 
@@ -632,9 +635,6 @@ transform = Transform3D(0.801181, 0, 0.598423, 0, 1, 0, -0.598423, 0, 0.801181, 
 [node name="ZetaTriforceVertical2" parent="Game/Level/zeta" instance=ExtResource("17_lu5hh")]
 transform = Transform3D(0.485527, 0, 0.874222, 0, 1, 0, -0.874222, 0, 0.485527, -112.904, 142.021, -291.761)
 reverse = true
-
-[node name="starting_platform" parent="Game/Level/zeta" instance=ExtResource("15_1gyo8")]
-transform = Transform3D(-0.949666, 0, -0.313263, 0, 1, 0, 0.313263, 0, -0.949666, -118.096, 154.822, -276.291)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Game/Level/zeta"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4687, 108.155, -275.531)
@@ -676,5 +676,9 @@ omni_attenuation = 0.0877999
 [connection signal="hit" from="Game/Level/bottom/BoundaryFlat11" to="Game" method="_on_boundary_flat_hit"]
 [connection signal="player_entered" from="Game/Level/dawnguard/start" to="Game" method="_on_checkpoint"]
 [connection signal="player_entered" from="Game/Level/alphaflight/start" to="Game" method="_on_checkpoint"]
+[connection signal="player_entered" from="Game/Level/alphaflight/start" to="Game" method="_on_alphaflight"]
 [connection signal="player_entered" from="Game/Level/nightwatch/start" to="Game" method="_on_checkpoint"]
+[connection signal="player_entered" from="Game/Level/nightwatch/start" to="Game" method="_on_nightwatch"]
 [connection signal="player_entered" from="Game/Level/zeta/start" to="Game" method="_on_checkpoint"]
+[connection signal="player_entered" from="Game/Level/zeta/start" to="Game" method="_on_zeta"]
+[connection signal="player_entered" from="Game/Level/zeta/omega" to="Game" method="_on_omega"]

@@ -29,7 +29,7 @@ script = ExtResource("1_f87ok")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 36, 0, 0)
 
 [node name="moving" parent="." instance=ExtResource("1_nkgey")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 24.4827, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.33849, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
