@@ -903,13 +903,13 @@ transform = Transform3D(-61.7246, 0, -158.398, 0, 170, 0, 158.398, 0, -61.7246, 
 transform = Transform3D(0.923182, 0, -169.997, 0, 170, 0, 169.997, 0, 0.923182, -103.163, 95.6757, -211.685)
 
 [node name="rockC8" parent="." instance=ExtResource("22_wsdhw")]
-transform = Transform3D(-135.736, 0, -102.351, 0, 170, 0, 102.351, 0, -135.736, -78.2579, 17.6605, -55.6285)
+transform = Transform3D(-135.736, 0, -102.351, 0, 170, 0, 102.351, 0, -135.736, -78.2579, 11.8739, -55.6285)
 
 [node name="rockC9" parent="." instance=ExtResource("22_wsdhw")]
 transform = Transform3D(-170, 0, 0.20171, 0, 170, 0, -0.20171, 0, -170, -93.3053, 24.8532, -98.0555)
 
 [node name="rockC6" parent="." instance=ExtResource("22_wsdhw")]
-transform = Transform3D(143.258, 0, 91.526, 0, 170, 0, -91.526, 0, 143.258, 89.0009, 36.9783, -103.817)
+transform = Transform3D(143.258, 0, 91.526, 0, 170, 0, -91.526, 0, 143.258, 89.0009, 28.0595, -103.817)
 
 [node name="rockC7" parent="." instance=ExtResource("22_wsdhw")]
 transform = Transform3D(98.775, 0, 138.36, 0, 170, 0, -138.36, 0, 98.775, 92.5278, 46.8863, -137.377)
