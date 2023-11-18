@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/zeta.png-ea06de6b943a1b2231f7d80358ce090b.cte
 
 [params]
 
-compress/mode=4
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=0

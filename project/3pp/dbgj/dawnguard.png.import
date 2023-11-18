@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/dawnguard.png-9ef779ad9ff53fe6ee1595ddbf3fed2
 
 [params]
 
-compress/mode=4
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=0

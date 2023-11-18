@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/alphaflight.png-64cbaa127860568c24dd844e8100e
 
 [params]
 
-compress/mode=4
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=0

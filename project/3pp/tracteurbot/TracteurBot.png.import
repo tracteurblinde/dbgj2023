@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/TracteurBot.png-025e0b873556fbacf6577d873a4b8
 
 [params]
 
-compress/mode=4
+compress/mode=1
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
