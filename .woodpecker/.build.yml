@@ -34,7 +34,7 @@ steps:
       - godot -v --headless --export-release "Web" ../../website_tmp/index.html || true
       - godot -v --headless --export-release "Web" ../../website_tmp/index.html || true
       - godot -v --headless --export-release "Web" ../../website_tmp/index.html || true
-      - godot -v --headless --export-release "Web" ../../website/index.html || true
+      - godot -v --headless --export-release "Web" ../../website/index.html
       - ls -lta ../../website
   publish:
     image: woodpeckerci/plugin-git
