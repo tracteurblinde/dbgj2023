@@ -1,0 +1,349 @@
+[gd_scene load_steps=35 format=3 uid="uid://dhlyl6k5wgcy1"]
+
+[ext_resource type="Script" path="res://assets/Coffee/Coffee.gd" id="1_6onoi"]
+[ext_resource type="PackedScene" uid="uid://ctug0fufv3kcu" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/cup_of_coffee.tscn" id="1_hl8p4"]
+[ext_resource type="Texture2D" uid="uid://chobd6rt2rcjt" path="res://3pp/quaterius/Food Pack Vol.1 - May 2016/CupOfCoffeeTexture.png" id="3_4g6id"]
+[ext_resource type="Texture2D" uid="uid://cb6qjobtddd2c" path="res://3pp/henry/pixeleffects/Shield3.png" id="3_xg6db"]
+[ext_resource type="Texture2D" uid="uid://cih1fbtllarjq" path="res://3pp/henry/pixeleffects/Consume2.png" id="4_oqhy7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2hoe"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("3_4g6id")
+
+[sub_resource type="Animation" id="Animation_eh6gt"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CupOfCoffee")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 1, 1, 0, 2, 0, 2, 1, 0, 1, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shiny:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Consume:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CupOfCoffee:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shiny:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_7lq8s"]
+resource_name = "collected"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shiny:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Consume:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Consume:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 12]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CupOfCoffee:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sip4y"]
+_data = {
+"collected": SubResource("Animation_7lq8s"),
+"idle": SubResource("Animation_eh6gt")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wswfu"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s12vr"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfu6o"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcrjn"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2043p"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyp7c"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb5sq"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43flv"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijvcl"]
+atlas = ExtResource("3_xg6db")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_183wc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wswfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s12vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfu6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcrjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2043p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyp7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb5sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43flv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijvcl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cx3b"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpi6y"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84ow4"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bixjo"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkm7c"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(64, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o0f5"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(80, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfg76"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(96, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpp4c"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(112, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d43iu"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(128, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb5tt"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(144, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1kl0"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(160, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj5nd"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(176, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oj1g"]
+atlas = ExtResource("4_oqhy7")
+region = Rect2(192, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a01mj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cx3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpi6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84ow4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bixjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkm7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o0f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfg76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpp4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb5tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1kl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj5nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oj1g")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_14ajr"]
+height = 3.29881
+radius = 1.29803
+
+[node name="Coffee" type="Node3D"]
+script = ExtResource("1_6onoi")
+
+[node name="CupOfCoffee" parent="." instance=ExtResource("1_hl8p4")]
+transform = Transform3D(0.25, 0, 0, 0, 0.199, 0, 0, 0, 0.25, 0, 1.29143, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_e2hoe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_method = 1
+libraries = {
+"": SubResource("AnimationLibrary_sip4y")
+}
+
+[node name="Shiny" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(15.5036, 0, 0, 0, 15.5036, 0, 0, 0, 1, 0, 1.4365, 0)
+modulate = Color(1, 1, 1, 0.627451)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_183wc")
+frame = 3
+
+[node name="Consume" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(10.8658, 0, 0, 0, 10.8658, 0, 0, 0, 1, 0, 2.64463, 0)
+visible = false
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_a01mj")
+frame = 12
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18213, 0)
+shape = SubResource("CylinderShape3D_14ajr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44225, 0)
+light_color = Color(1, 0.890196, 0.392157, 1)
+light_energy = 0.6
+omni_range = 2.53714
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -6,6 +6,13 @@ signal anykey_pressed
 var has_pressed_anykey := false
 var has_fade_in_completed := false
 
+var coffee_count := 0
+var coffee_max := 0
+
+
+func _ready():
+	$AnimationPlayer.play("intro")
+
 
 func _input(event):
 	if has_fade_in_completed and event is InputEventKey:
@@ -28,18 +35,18 @@ func _on_anykey_pressed():
 	$AnimationPlayer.play("fade_intro")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$AnimationPlayer.play("intro")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
 func _on_animation_player_animation_finished(anim_name: StringName):
 	if anim_name == "intro":
 		has_fade_in_completed = true
 	elif anim_name == "fade_intro":
 		emit_signal("intro_finished")
+
+
+func _on_coffee_spawn():
+	coffee_max += 1
+	$Score/Total.text = "/" + str(coffee_max)
+
+
+func _on_coffee_collected():
+	coffee_count += 1
+	$Score/Collected.text = str(coffee_count).pad_zeros(2)

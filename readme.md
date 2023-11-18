@@ -14,7 +14,8 @@ Desert Bus Gamejam Logo - Featherweight
 tracteurbot - Lance Ferrantino
 
 Textures:
-- Skybox and sand texture - [Polyhaven](https://polyhaven.com/)
+- Skybox - [Polyhaven](https://polyhaven.com/)
+- Pixel Art Effects - [henrysoftware](https://henrysoftware.itch.io/pixel-effects)
 
 Models:
  - Casual Player - [Quaternius](https://quaternius.com/)

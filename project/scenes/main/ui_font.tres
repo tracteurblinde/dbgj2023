@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cst6uqiwhepo5"]
+
+[ext_resource type="FontFile" uid="uid://bdwltr2ls8mlq" path="res://3pp/IBMPlex/IBMPlexSans-Regular.ttf" id="1_pw6t5"]
+
+[resource]
+font = ExtResource("1_pw6t5")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
