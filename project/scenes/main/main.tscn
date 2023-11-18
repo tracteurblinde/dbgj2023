@@ -352,7 +352,7 @@ offset_bottom = 52.0
 
 [node name="Cups" type="Label" parent="UI/Score"]
 layout_mode = 2
-text = "☕"
+text = "Cups:"
 label_settings = ExtResource("5_tyg2n")
 vertical_alignment = 2
 
