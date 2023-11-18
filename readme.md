@@ -1,10 +1,12 @@
 # Desert Bus For Hope 2023 Game Jam
 
-Latest version is hosted at https://demo.tracteur.dev/dbgj2023/
+![Desert Bus: Coffee Canyon Logo](title.png)
 
 This is the repository an entry in the [Desert Bus For Hope 2023 Game Jam](https://itch.io/jam/2023).
 
 **Theme:** Coffee Quest
+
+Latest version is hosted at https://demo.tracteur.dev/dbgj2023/
 
 ## Credits
 Concept, design and code - Tracteur Blindé
