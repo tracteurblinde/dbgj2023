@@ -9,9 +9,9 @@
 },
 "default_portrait": "",
 "description": "The Caffiene Coordinator for Desert Bus.",
-"display_name": "Kaff-Ordinator",
+"display_name": "Caff-Ordinator",
 "mirror": false,
-"nicknames": ["Kaff-Ordinator"],
+"nicknames": ["Caff-Ordinator"],
 "offset": Vector2(0, 0),
 "portraits": {},
 "scale": 1.0
